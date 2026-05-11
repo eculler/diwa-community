@@ -12,8 +12,8 @@ The following diagram shows the different tools you will be using and how they r
 
 ```mermaid
 flowchart LR
-    subgraph sg1
-      id1(((GitHub)))
+    subgraph GitHub
+      id1(GitHub Account)
       id10(Your Code)
       id11(GitHub Actions)
     end
@@ -21,10 +21,9 @@ flowchart LR
     id2(DockerHub)
     id2 == Run Image as Container ==> id3
     id3 == Push Code ==> id1
-    id1 == Host Code ==> id10 == Clone Repository ==> id3
-    id1 == Build Image ==> id11 == Push Image ==> id2
+    id11 == Build and Push Image ==> id2
     id1 == Create Account ==> id2
-    
+    id10 == Clone Repository ==> id3
 ```
 
 ## Set up your accounts
