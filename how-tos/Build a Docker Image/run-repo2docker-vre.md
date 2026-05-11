@@ -1,6 +1,6 @@
 # Use `repo2docker` to jump-start reproducibility
 
-`repo2docker` is a utility maintained by Project Jupyter that creates stable Docker images based on [standard configuration files(https://repo2docker.readthedocs.io/en/latest/configuration/#config-files). It is suitable for Python, R, Python and R, and Julia environments, and can also install Linux packages if needed.
+[`repo2docker`](https://repo2docker.readthedocs.io/en/latest/) is a utility maintained by Project Jupyter that creates stable Docker images based on [standard configuration files](https://repo2docker.readthedocs.io/en/latest/configuration/#config-files). It is suitable for Python, R, Python and R together, and Julia environments, and can also install Linux packages if needed.
 
 In this tutorial, you will:
   1. Use `cookiecutter` to set up a repository that is ready to use for your DIWA VRE-compatible reproducible workflow
@@ -8,11 +8,30 @@ In this tutorial, you will:
   3. Upload the image to DockerHub, and
   4. Start up a container with your environment on the DIWA VRE
 
+The following diagram shows the different tools you will be using and how they relate to each other.
+
+```mermaid
+flowchart LR
+    subgraph sg1
+      id1(((GitHub)))
+      id10(Your Code)
+      id11(GitHub Actions)
+    end
+    id3(DIWA VRE)
+    id2(DockerHub)
+    id2 == Run Image as Container ==> id3
+    id3 == Push Code ==> id1
+    id1 == Host Code ==> id10 == Clone Repository ==> id3
+    id1 == Build Image ==> id11 == Push Image ==> id2
+    id1 == Create Account ==> id2
+    
+```
+
 ## Set up your accounts
 
 ### Before you start, make sure you have a GitHub Account
 
-You will need a **[GitHub account](https://github.com/signup?source=login)** linked to the DIWA VRE to complete this tutorial. 
+You will need a [GitHub account](https://github.com/signup?source=login) linked to the DIWA VRE to complete this tutorial. If you don't, **start at [this tutorial](https://github.com/DigitalWaters-fi/community/blob/main/how-tos/connect-vre-github/connect-vre-github.md)**
 
 ### Get started with DockerHub
 
