@@ -193,7 +193,7 @@ From this page, copy the name of the repository including the tag. It should loo
 
 Shut down your server if it is still running. Then, start another custom image, this time using the repository and tag name you copied from DockerHub.
 
-![Start your custom image on the DIWA VRE.](img/54-start-image.png)
+![Start your custom image on the DIWA VRE.](img/54-launch-image.png)
 
 ### Run your workflow!
 
