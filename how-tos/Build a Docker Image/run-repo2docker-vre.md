@@ -115,7 +115,7 @@ We have prepared a template repository, and you can fill in your details using t
 
 Start by logging into the [DIWA VRE](https://diwa-data-lab-vre.rahtiapp.fi/). From the home page, select `Custom Image`, paste `eculler/diwa_repo_cookiecutter` into the image field, and click `Launch`
 
-![Open a cookiecutter image on the DIWA VRE](img/31-lauch-cookiecutter.png)
+![Open a cookiecutter image on the DIWA VRE](img/31-launch-cookiecutter.png)
 
 #### Run the cookiecutter command in the Terminal
 
@@ -175,7 +175,7 @@ You now have all the ingredients to run your workflow reproducibly on the DIWA V
 
 Making sure that you are logged in, head to the [repository page on DockerHub](https://hub.docker.com/repositories/). Once there, identify the repository in DockerHub with the same name as your GitHub repository and click on the page.
 
-![Select the repository for this project on DockerHub.](img/51-go-to-repo.png)
+![Select the repository for this project on DockerHub.](img/51-go-to-repository.png)
 
 ### Select the most recent tag
 
