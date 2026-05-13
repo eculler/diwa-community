@@ -13,17 +13,18 @@ The following diagram shows the different tools you will be using and how they r
 ```mermaid
 flowchart LR
     subgraph GitHub
-      id1(GitHub Account)
-      id10(Your Code)
+      id1(GitHub Authentication)
+      id10(GitHub Repository)
       id11(GitHub Actions)
+      id10 == Configure Image ==> id11
     end
-    id3(DIWA VRE)
     id2(DockerHub)
-    id2 == Run Image as Container ==> id3
-    id3 == Push Code ==> id1
+    id3(DIWA VRE)
     id11 == Build and Push Image ==> id2
+    id2 == Run Image as Container ==> id3
     id1 == Create Account ==> id2
-    id10 == Clone Repository ==> id3
+    id1 == Create Account ==> id3
+    id3 <== Sync Code ==> id10
 ```
 
 ## Set up your accounts
@@ -46,9 +47,7 @@ You can then use that GitHub Account to create a **[DockerHub account](https://a
 
 #### Follow instruction to verify your email
 
-#### Check your work
-
-You should now see the DockerHub homepage.
+You should receive an email with instructions on verifying your account. Once you finish, you can navigate to the [DockerHub homepage](https://hub.docker.com) if you are not there already.
 
 ![](img/03-docker-home.png)
 
@@ -84,43 +83,85 @@ Make sure to copy!
 
 Next, navigate to the repository you are working on in GitHub. You can create a DIWA VRE and `repo2docker`-compatible repository using our cookiecutter.
 
-![](img/21-github-repo.png)
+![Return to your GitHub repository](img/21-github-repo.png)
 
 ##### Navigate to Settings
 
-![](img/22-settings.png)
+![Navigate to Settings](img/22-settings.png)
 
 ##### Select Actions Secrets
 
-![](img/23-new-secret.png)
+![Select Actions Secrets](img/23-new-secret.png)
 
 ##### Add your DockerHub credentials as repository secrets
 
-The secrets must be named EXACTLY `DOCKER_USERNAME` and `DOCKER_PASSWORD`.
+The secrets must be named EXACTLY `DOCKER_USERNAME` and `DOCKER_PASSWORD`. However, the *values* of the secrets should *not* match what you see here -- they should be *your* docker username and PAT.
 
 ![Add your DockerHub username s as a repository secret named DOCKER_USERNAME](img/24-user-secret.png)
 
 ![Add your DockerHub token as a repository secret named DOCKER_PASSWORD](img/25-pass-secret.png)
 
-Check the names!
+Once you have added the secrets make sure you check that the names are correct! Otherwise GitHub Actions will not be able to find the values you saved.
 
 ![Check the names!](img/26-check-secrets.png)
 
 ## Build your environment
 
-Before you get started, make sure that you have put all your **configuration files** into your repository. That means environment.yml (conda) or requirements.txt (pip) for Python libraries, and install.R for R libraries. You can check out the [`repo2docker` documentation](https://repo2docker.readthedocs.io/en/latest/start/) for more information on other types of configurations.
+### Start out with our cookiecutter
 
-Extra configuration files will cause the build to take longer, so make sure you remove anything you don't need!
+We have prepared a template repository, and you can fill in your details using the cookiecutter utility. 
+
+#### Open a cookiecutter image on the DIWA VRE
+
+Start by logging into the [DIWA VRE](https://diwa-data-lab-vre.rahtiapp.fi/). From the home page, select `Custom Image`, paste `eculler/diwa_repo_cookiecutter` into the image field, and click `Launch`
+
+![Open a cookiecutter image on the DIWA VRE](img/31-lauch-cookiecutter.png)
+
+#### Run the cookiecutter command in the Terminal
+
+Open a Terminal tab, and run the following command, and respond to the prompts with information about *your* project:
+
+```bash
+cookiecutter https://github.com/LizCarter492/DIWA_repo_cookiecutter
+```
+
+![Run cookiecutter and respond to prompts](img/32-run-cookiecutter.png)
+
+You should now see a folder titled with your chosen project slug in your home directory:
+
+![Your new project is now in your home folder.](img/33-view-new-project.png)
+
+The project directory should also contain the DIWA cookiecutter template files:
+
+![The new project contains the cookiecutter template files.](img/34-view-contents.png)
+
+### Sync your project with GitHub
+
+[Follow these instructions from GitHub](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github) to create a new GitHub repository out of your project directory.
+
+**Make sure that when you are linking your repository on the VRE to the remote origin on GitHub that you select SSH authentication!!!**
+
+![Select SSH authentication when linking to the remote origin.](img/35-select-ssh.png)
+
+You should now be able to see your project on GitHub:
+
+![View your new repository on GitHub.](img/36-view-repository.png)
+
+### Configure your environment
+
+The next step is to make sure that you have put all your **configuration files** into your repository.  That means environment.yml (conda) or requirements.txt (pip) for Python libraries, and install.R for R libraries. If you want to use R and Python together, you will also need a `runtime.txt` file with the version and date of R that you want to use. You can check out the [`repo2docker` documentation](https://repo2docker.readthedocs.io/en/latest/start/) for more information on other types of configurations.
+
+When you use cookiecutter, you should have examples of common configuration files already in your repository. However, you will need to customize them with the particular packages or libraries that you are using. Extra configuration files or packages will cause the build to take longer, so make sure you remove anything you don't need!
 
 ### Go to the Actions tab on GitHub
 
 > You may need to enable Actions depending on how you created your repository.
 
-![](img/31-actions.png)
+![Go to the Actions tab on GitHub](img/41-actions.png)
 
 ### Select the Build and Push Container workflow and run it.
 
-![](img/32-build-container.png)
+![Select the Build and Push Container workflow and run it.](img/42-build-container.png)
 
 ## Try your environment on the VRE
 
