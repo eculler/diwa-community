@@ -153,6 +153,8 @@ The next step is to make sure that you have put all your **configuration files**
 
 When you use cookiecutter, you should have examples of common configuration files already in your repository. However, you will need to customize them with the particular packages or libraries that you are using. Extra configuration files or packages will cause the build to take longer, so make sure you remove anything you don't need!
 
+At this point, if you already have code elements, you should move them into the notebooks folder of this repository.
+
 ### Go to the Actions tab on GitHub
 
 > You may need to enable Actions depending on how you created your repository.
@@ -165,3 +167,32 @@ When you use cookiecutter, you should have examples of common configuration file
 
 ## Try your environment on the VRE
 
+You now have all the ingredients to run your workflow reproducibly on the DIWA VRE! First, you need to get the name of your image from DockerHub. 
+
+### Navigate to your repository page on DockerHub
+
+Making sure that you are logged in, head to the [repository page on DockerHub](https://hub.docker.com/repositories/). Once there, identify the repository in DockerHub with the same name as your GitHub repository and click on the page.
+
+![Select the repository for this project on DockerHub.](img/51-go-to-repo.png)
+
+### Select the most recent tag
+
+**If you are actively developing your image configuration, it is important NOT to use the "latest" tag from DockerHub!** If you do this and then make changes, your changes will not show up on the VRE. Instead, select the most recent tag that is **not** "latest". This will be the same as "latest", but you will not have the same caching problem.
+
+![Select the most recent tag that is not latest.](img/52-select-tag.png)
+
+### Copy the name of your DockerHub repository with tag
+
+From this page, copy the name of the repository including the tag. It should look something like `yourusername/your_project_slug:tag14arg8704`.
+
+![Copy the name of your DockerHub repository with tag.](img/53-copy-tag.png)
+
+### Start your custom image on the DIWA VRE
+
+Shut down your server if it is still running. Then, start another custom image, this time using the repository and tag name you copied from DockerHub.
+
+![Start your custom image on the DIWA VRE.](img/54-start-image.png)
+
+### Run your workflow!
+
+All the packages and software you need should now be installed. If they are not, check your configuration files and make sure you are not using a cached Docker image.
