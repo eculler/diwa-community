@@ -51,6 +51,50 @@ You should receive an email with instructions on verifying your account. Once yo
 
 ![](img/03-docker-home.png)
 
+## Build your environment
+
+### Start out with our cookiecutter
+
+We have prepared a template repository, and you can fill in your details using the cookiecutter utility. 
+
+#### Open a cookiecutter image on the DIWA VRE
+
+Start by logging into the [DIWA VRE](https://diwa-data-lab-vre.rahtiapp.fi/). From the home page, select `Custom Image`, paste `eculler/diwa_repo_cookiecutter` into the image field, and click `Launch`
+
+![Open a cookiecutter image on the DIWA VRE](img/31-launch-cookiecutter.png)
+
+#### Run the cookiecutter command in the Terminal
+
+Open a Terminal tab, and run the following command, and respond to the prompts with information about *your* project:
+
+```bash
+cookiecutter https://github.com/LizCarter492/DIWA_repo_cookiecutter
+```
+
+![Run cookiecutter and respond to prompts](img/32-run-cookiecutter.png)
+
+You should now see a folder titled with your chosen project slug in your home directory:
+
+![Your new project is now in your home folder.](img/33-view-new-project.png)
+
+The project directory should also contain the DIWA cookiecutter template files:
+
+![The new project contains the cookiecutter template files.](img/34-view-contents.png)
+
+### Sync your project with GitHub
+
+[Follow these instructions from GitHub](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github#adding-a-local-repository-to-github-with-github-cli) to create a new GitHub repository out of your project directory.
+
+> If you are using an older version of the  diwa_repo_cookiecutter image, then you will have a few extra steps. First, you will need to follow [the instructions for adding your repository from git](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github#adding-a-local-repository-to-github-using-git).
+
+> **Make sure that when you are linking your repository on the VRE to the remote origin on GitHub that you select SSH authentication!!!**
+
+> ![Select SSH authentication when linking to the remote origin.](img/35-select-ssh.png)
+
+You should now be able to see your project on GitHub:
+
+![View your new repository on GitHub.](img/36-view-repository.png)
+
 ### Give GitHub Actions access to push to DockerHub
 
 Images are a launchable record of all the setup steps needed for code to run. This is an important part of reproducibility, because it is difficult for someone else to create a computing environment that exactly meets the needs of your workflow. DockerHub lets you share images just like GitHub lets you share code, and GitHub Actions is useful for building images. All you need is to be able to upload your image once it is complete!
@@ -105,49 +149,6 @@ Once you have added the secrets make sure you check that the names are correct! 
 
 ![Check the names!](img/26-check-secrets.png)
 
-## Build your environment
-
-### Start out with our cookiecutter
-
-We have prepared a template repository, and you can fill in your details using the cookiecutter utility. 
-
-#### Open a cookiecutter image on the DIWA VRE
-
-Start by logging into the [DIWA VRE](https://diwa-data-lab-vre.rahtiapp.fi/). From the home page, select `Custom Image`, paste `eculler/diwa_repo_cookiecutter` into the image field, and click `Launch`
-
-![Open a cookiecutter image on the DIWA VRE](img/31-launch-cookiecutter.png)
-
-#### Run the cookiecutter command in the Terminal
-
-Open a Terminal tab, and run the following command, and respond to the prompts with information about *your* project:
-
-```bash
-cookiecutter https://github.com/LizCarter492/DIWA_repo_cookiecutter
-```
-
-![Run cookiecutter and respond to prompts](img/32-run-cookiecutter.png)
-
-You should now see a folder titled with your chosen project slug in your home directory:
-
-![Your new project is now in your home folder.](img/33-view-new-project.png)
-
-The project directory should also contain the DIWA cookiecutter template files:
-
-![The new project contains the cookiecutter template files.](img/34-view-contents.png)
-
-### Sync your project with GitHub
-
-[Follow these instructions from GitHub](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github#adding-a-local-repository-to-github-with-github-cli) to create a new GitHub repository out of your project directory.
-
-> If you are using an older version of the  diwa_repo_cookiecutter image, then you will have a few extra steps. First, you will need to follow [the instructions for adding your repository from git](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github#adding-a-local-repository-to-github-using-git).
-
-> **Make sure that when you are linking your repository on the VRE to the remote origin on GitHub that you select SSH authentication!!!**
-
-> ![Select SSH authentication when linking to the remote origin.](img/35-select-ssh.png)
-
-You should now be able to see your project on GitHub:
-
-![View your new repository on GitHub.](img/36-view-repository.png)
 
 ### Configure your environment
 
