@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Digital Waters Community Docs</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Digital Waters Community Docs</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="dropdown-header">
+ <span class="menu-text">how-tos/**.qmd</span></li>
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="getting-started-on-the-diwa-datalab" class="level1">
+<h1>Getting started on the DIWA DataLab</h1>
+<p>The <a href="https://digitalwaters.fi">Digital Waters</a> flagship and pilot, in collaboration with <a href="https://csc.fi">CSC – Finnish Center for Informatics in Science</a> has developed a JupyterHub based virual reasearch environment to accelerate research, promote FAIR and Open Science best practices within the flagship, facilitate collaboration, and co-develop digital twin services. We’re calling this service the <a href="https://diwa-data-lab-vre.rahtiapp.fi/hub/login?next=%2Fhub%2Fhome">DIWA DataLab</a>, and it is available to use for research and development.</p>
+<section id="why-use-the-diwa-datalab" class="level2">
+<h2 class="anchored" data-anchor-id="why-use-the-diwa-datalab">Why use the DIWA DataLab?</h2>
+<p>A <strong>Virtual Research Environment (VRE)</strong> offers several clear advantages for the researcher community, especially in large consortium like the Digital Waters Flagship where collaboration )both on individual research projects and in co-development of digital twin services) is core to our mission.</p>
+<ol type="1">
+<li><p><strong>Easy Access Anywhere</strong> – You can work from any computer with a web browser; no need to install complex software locally. Your workspace and files are in the cloud.</p></li>
+<li><p><strong>Reproducibility</strong> – A VRE ensures that the computing environment (software versions, tools, packages) is the same for all team members. This makes experiments and analyses easier to reproduce and verify.</p></li>
+<li><p><strong>Collaboration</strong> – Multiple researchers can share the same workspace, data, and tools, reducing the risk of mismatched versions or duplicated efforts.</p></li>
+<li><p><strong>Data Safety</strong> – Persistent storage (PVCs) keeps your files safe even if your session ends. This prevents work and data loss from failures of individual PCs.</p></li>
+<li><p><strong>Resource Management</strong> – Researchers can access more computing power (CPU, GPU, memory) than might be available on their personal machines, which is useful for processing large datasets or simulations, and can help you develop scalable tools.</p></li>
+<li><p><strong>Pre-Configured Tools</strong> – VREs use images with software and packages already installed, saving time on setup and reducing technical barriers. As we develop more data processing and modelling tools within the flagship, more software will be added to accelerate our research.</p></li>
+<li><p><strong>Scalability &amp; Flexibility</strong> – You can quickly start new instances for experiments, adjust resources, or switch between different software environments as needed.</p></li>
+<li><p><strong>Focus on Research</strong> – By handling infrastructure, updates, and compatibility automatically, a VRE allows researchers to focus on <strong>science instead of system administration</strong>.</p></li>
+</ol>
+<p>In short, a VRE is like having a <strong>ready-to-use, secure, and sharable lab in the cloud</strong>, designed to save time, improve collaboration, and make research more reproducible.</p>
+</section>
+<section id="useful-terms" class="level2">
+<h2 class="anchored" data-anchor-id="useful-terms">Useful terms:</h2>
+<ol type="1">
+<li><strong>Server</strong> – The “workspace” that runs for a user, letting them access tools, write documents, and run experiments. Think of it as a personal computer in the cloud.</li>
+<li><strong>Instance</strong> – A single active copy of that workspace. When you log in, an instance is created for you to work in.</li>
+<li><strong>Image</strong> – A pre-packaged setup that includes the operating system and any tools you need. It’s like a pre-configured computer you can start instantly.</li>
+<li><strong>PVC (Persistent Volume Claim)</strong> – A way to save your files and data safely, even if the workspace is closed or restarted. It’s like a personal folder in the cloud. You have 500 GB of PVC with each server. Anything you save in your server will be available next time you log in, and these files can be accessed from any image.</li>
+<li><strong>Software</strong> – The applications or programs available in the image, like data analysis tools, simulation software, or text editors. You can use the images that we provide, suggest new images for us to build, or upload your own.</li>
+<li><strong>Packages</strong> – A bundle of code that has been packaged for reuse, these are the work horses of the open science movement. Packages are code that you need to use but don’t need to write, and contain extra add-ons or modules that expand what the software can do. You can install your own packages into any image and they will be there for you next time you log in. Learn more about installing packages in the DIWA DataLab <a href="https://github.com/DigitalWaters-fi/community/tree/main/how-tos/install-packages-guides">here</a></li>
+</ol>
+</section>
+</section>
+<section id="signing-up-for-the-vre" class="level1">
+<h1>Signing up for the VRE</h1>
+<p>The DIWA DataLab is accessible via GitHub. To get access to the DIWA DataLab, create a user account on GitHub.com, and request to join the DigitalWaters-fi GitHub organization <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=muScnwFRo0qMdQ1ZNa1lJWEtMFscU0JOr8HqIPYV7uJUN0xYMlpTMVBKOTI2MUVJOFpNMkZaNUdOSi4u">here</a>. Detailed instructions on how to create a professional GitHub profile, and integrate these credentials into the DIWA DataLab, can be found <a href="https://github.com/DigitalWaters-fi/community/tree/main/how-tos/connect-vre-github">here</a>.</p>
+</section>
+<section id="features-of-the-diwa-datalab" class="level1">
+<h1>Features of the DIWA DataLab</h1>
+<section id="launch-page" class="level2">
+<h2 class="anchored" data-anchor-id="launch-page">Launch page</h2>
+<p>Use the landing page to log in to the DIWA DataLab using your GitHub credentials. Please note that we require users to have 2FA (two-factor authentication) set up on their GitHub account. If you aren’t a member of the DigitalWaters-fi GitHub organization, use the “Sign up” form to request access. <img width="1911" height="1022" alt="image" src="https://github.com/user-attachments/assets/a2542028-4ed0-4a6f-9679-9e107a3a1c1d"></p>
+<p>Once you are in the DIWA DataLab, click “Launch My Server.”</p>
+<p>Sometimes it is beneficial for users to have more than one server at a time (for example, if you are using the DIWA DataLab to teach a course, and want to experiment with student settings while you have the course running). Email diwa-vre@lists.oulu.fi if you need this service.</p>
+</section>
+<section id="select-an-image" class="level2">
+<h2 class="anchored" data-anchor-id="select-an-image">Select an image</h2>
+<p>Each one of the tiles viewable in your server represent an image: a virtual workspace in the cloud that includes an operating system and some software that we’ve selected because we think will be useful to you. <img width="1502" height="822" alt="image" src="https://github.com/user-attachments/assets/c6a926ea-1127-46d5-bc1c-368c58e7ea96"></p>
+<p><strong>We have three four types of images in the DIWA DataLab.</strong> 1. Notebook based images: these will give you access to a terminal, some basic software, and notebook IDEs to write code in R, Python, or Julia. 2. Desktop based images: these will launch an Ubuntu desktop, where you can select software using a graphical user interface. Software that requires a GUI, like QGIS and CloudCompare, can be accessed here. 3. Process model images: the DIWA Engineering Team and researchers are working to develop a scalable, source-to-sea virtualization of the hydrosphere in the form of coupled process models with a data assimilation system. As we add more proess models to this framework, these will appear as images here. 4. Build your own images: you can upload your own Docker or Singularity containers and run them here.</p>
+<p><strong>Wait, I don’t see my software in any of these images…what do I do?</strong> Reach out! We need to hear from you to learn more about your workflows. Please suggest software, packages, or any additional features you’d like to see hosted on the DIWA DataLab using GitHub <a href="https://github.com/orgs/DigitalWaters-fi/discussions/1">Discussions</a>, by raising an <a href="https://github.com/DigitalWaters-fi/.github/issues">Issue</a>, or by email: diwa-vre@lists.oulu.fi.</p>
+<section id="select-instance-size" class="level3">
+<h3 class="anchored" data-anchor-id="select-instance-size">Select instance size</h3>
+<p>After you’ve selected the image (software and packages) you want to run on your server, you will see a drop down menu allowing you to pick an image <strong>size</strong>: how much CPU and RAM will be available to you. This allows you to scale up or down your computer power as needed. To conserve resources, please always selected the smallest effective size for your project. If you need more compute power than our current options indicate, email diwa-vre@oulu.fi with your GitHub username and allocation request, and we’ll work to get that updated ASAP. <img width="1912" height="955" alt="image" src="https://github.com/user-attachments/assets/90abe74b-13fe-4406-94f7-8249f9fbd8d7"></p>
+</section>
+</section>
+<section id="notebook-images" class="level2">
+<h2 class="anchored" data-anchor-id="notebook-images">Notebook images</h2>
+<p>An interactive notebook (aka Jupyter Notebook or R Markdown) is a digital document that lets you combine text, code, and results in one place and immediately see the output of your work, richly formatted like a website. It’s called “interactive” because it is not just a pretty webpage, it is an integrated development environment (IDE) you can change the code or inputs and instantly run it to see updated results.</p>
+<ul>
+<li><strong>Markdown cells</strong>: allow you to write and present formatted text and equations, embed URLs, videos, and images. This is a place to communicate your research and explain your code and results. Learn more about Markdown <a href="https://www.markdownguide.org/">here</a></li>
+<li><strong>Code cells</strong>: are where you write and execute code in either R, Python, or Julia. This is how you read data into your workspace, process data, train and run models, and prepare text-based figures visualizing results. Are you new to scientific computing? Learn the ropes in Python using <a href="https://github.com/jakevdp/PythonDataScienceHandbook?tab=readme-ov-file">The Python Data Science Handbook by Jake VanderPlas</a></li>
+</ul>
+<section id="managing-environments-and-kernels" class="level3">
+<h3 class="anchored" data-anchor-id="managing-environments-and-kernels">Managing environments and Kernels</h3>
+<p>An <strong>environment</strong> is an isolated workspace with its own: software (R, Python) version, installed packages (and versions), and dependencies (and versions). Environments are an important part of reproducible scientific workflows, because they allow someone to run your code without having to install specific packages or manage dependency chain conflicts. As the libraries behind your research evolve and change, working in software environments will ensure that your code still runs in the future.</p>
+<p>We have provided you with a few environments that support many functions in geoscientific computing. If you install a package from within an environment, that package will be saved to your image, and you won’t have to install it again.</p>
+<p>To open an environment from within your Jupyter Notebook interface, select the kernel in the upper right hand corner, or using the main menu:</p>
+<p><img width="1913" height="728" alt="image" src="https://github.com/user-attachments/assets/fa7d164b-8f6b-4e0c-a7ac-487341c3bcf7"></p>
+<p>Learn more about managing environments, and making them discoverable as kernels in your notebook images, <a href="https://github.com/DigitalWaters-fi/community/tree/main/how-tos/install-packages-guides">here</a> ## Installing packages You can install packages either using bash commands in terminal, or using python magic in a cell within a notebook.</p>
+<p>To open a terminal, in a notebook image select File &gt; New &gt; Terminal, or select the Terminal tile in the Launcher page. <img width="1913" height="985" alt="image" src="https://github.com/user-attachments/assets/7a852277-1344-4edc-8c7b-e0f9a849296c"></p>
+<p>Once inside the terminal, activate your conda environment:</p>
+<pre><code>source activate myenv</code></pre>
+<p>Then use pip or conda to install the required package.</p>
+<pre><code>pip install mypackage</code></pre>
+<p>To install the package within a notebook, select the desired kernel, and use the ! before your code to execute bash commands:</p>
+<pre><code>!pip install mypackage</code></pre>
+</section>
+</section>
+<section id="desktop-images" class="level2">
+<h2 class="anchored" data-anchor-id="desktop-images">Desktop images</h2>
+<p>We also have several desktop images that you can access within the DIWA DataLab. These images allow users to interact with software using a graphical user interface. Desktop images can be viewed under “Data Visualization and Processing Apps” <img width="1915" height="633" alt="image" src="https://github.com/user-attachments/assets/08aec748-14bf-4a6b-8419-6bacf1c90d03"></p>
+<p>Once you have opened one of this images, select the “Desktop” option from the JupyterLab viewer:</p>
+<p><img width="1527" height="945" alt="image" src="https://github.com/user-attachments/assets/c1925a4f-2082-42c5-a246-f3017cc9bd02"></p>
+<p>Once you are inside the Desktop application, your can select software using the “Applications” menu in the upper right hand corner. Alternatively, you can search for applications using the “Applications finder” platform, which appears as a magnifying glass icon at the bottom of the screen: <img width="1917" height="962" alt="image" src="https://github.com/user-attachments/assets/9c83ec66-3259-4ce5-86b4-59a944d7ecff"></p>
+<p>We welcome suggestions for new applications, software, or plugins to be included in our desktop images.</p>
+</section>
+<section id="saving-data-and-files" class="level2">
+<h2 class="anchored" data-anchor-id="saving-data-and-files">Saving data and files</h2>
+<p>To accomodate multi-software workflows, all files saved within a server are accessible across all images opened in that server. For example, if your workflow involves accessing a raw pointcloud file on Zenodo, cleaning it on CloudCompare, analyzing it in Python, and vizualizing it in QGIS, your end-to-end workflow will be supported in the DIWA DataLab.</p>
+<p>Please note that deleting your server will delete all saved files and data, do this at your own risk.</p>
+</section>
+<section id="syncing-git-with-github" class="level2">
+<h2 class="anchored" data-anchor-id="syncing-git-with-github">Syncing git with GitHub</h2>
+<p>We encourage you to mirror all code with your personal GitHub repository, and to publish your entire DIWA DataLab image as supplementary material alongside any peer-reviewed publications. Future trainings will introduce our standard repository template to simplify the process of creating reproducible code to showcase your research, in compliance with open code and data standards of top-tier journals.</p>
+<p>For full instructions on how to configure a connection to GitHub within your server, see our tutorial <a href="https://github.com/DigitalWaters-fi/community/blob/main/how-tos/connect-vre-github/connect-vre-github.md">here</a></p>
+</section>
+<section id="reporting-bugs" class="level2">
+<h2 class="anchored" data-anchor-id="reporting-bugs">Reporting bugs</h2>
+<p>The DIWA DataLab is brand new and currently in development. If you notice any issues, errors, or bugs, <a href="https://github.com/DigitalWaters-fi/.github/issues">please report an issue here</a>. If you need additional storage, computational power, or software, please email diwa-vre@lists.oulu.fi with details of your request.</p>
+</section>
+<section id="ask-for-help-with-research-computing" class="level2">
+<h2 class="anchored" data-anchor-id="ask-for-help-with-research-computing">Ask for help with research computing</h2>
+<p>We are working hard to develop new features that will help accelerate research within the DIWA DataLab, including a domain-specailized chatbot (the DIWA ReChat) and access to federated data searches through the <a href="https://aquainfra.dev.52north.org/search?searchterm=discharge&amp;dataProvider=syke">AquaINFRA DDAS</a>. In the meantime, get community support with your data access, processing, modelling, or visualization troubles using our moderate <a href="https://github.com/orgs/DigitalWaters-fi/discussions">GitHub discussion boards</a></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Digital Waters Community Docs</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Digital Waters Community Docs</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="dropdown-header">
+ <span class="menu-text">how-tos/**.qmd</span></li>
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="how-to-connect-your-account-on-the-diwa-virtual-research-environment-vre-to-github" class="level1">
+<h1>HOW-TO: Connect your account on the DIWA Virtual Research Environment (VRE) to GitHub</h1>
+<p>Goals:</p>
+<ul>
+<li>Create a GitHub account with two-factor authentication</li>
+<li>Learn how to authenticate to GitHub on the command line using GitHub CLI</li>
+<li>Set up your account so that you can pull and push changes from GitHub to the VRE</li>
+</ul>
+<hr>
+<section id="create-your-github-account" class="level2">
+<h2 class="anchored" data-anchor-id="create-your-github-account">Create your GitHub account</h2>
+<p>Start out at https://github.com/signup:</p>
+<p><img src="img/01-gh-signup-filled.png" class="img-fluid" alt="Complete the form. You will be asked to verify your email address – Go check your email for the verification link."> &gt; Complete the form. You will be asked to verify your email address – Go check your email for the verification link.</p>
+<p><img src="img/02-gh-signup-success.png" class="img-fluid" alt="When you have created your account, you should see this success alert."> &gt; When you have created your account, you should see this success alert.</p>
+</section>
+<section id="fill-out-your-github-profile-optional-but-recommended" class="level2">
+<h2 class="anchored" data-anchor-id="fill-out-your-github-profile-optional-but-recommended">Fill out your GitHub profile (optional, but recommended)</h2>
+<p><img src="img/11-gh-settings.png" class="img-fluid" alt="Next, head to your settings page on Github"> &gt; Next, head to your settings page on Github</p>
+<p><img src="img/12-gh-profile-a.png" class="img-fluid" alt="Fill out your profile."> &gt; Fill out your profile.</p>
+<p><img src="img/13-gh-profile-b.png" class="img-fluid" alt="Make sure to save your profile when you are finished."> &gt; Make sure to save your profile when you are finished.</p>
+<hr>
+</section>
+<section id="set-up-a-two-factor-authentication" class="level2">
+<h2 class="anchored" data-anchor-id="set-up-a-two-factor-authentication">Set up a two-factor authentication</h2>
+<p>This will be required to use the VRE in the future. The easiest way to add two-factor authentication is with a passkey on the computer you use to access the VRE.</p>
+<p><img src="img/21-gh-passkey.png" class="img-fluid" alt="Next, go to the password and authentication section of your settings."> &gt; Next, go to the password and authentication section of your settings.</p>
+<p><img src="img/22-gh-add-passkey.png" class="img-fluid" alt="Click on Add a passkey."> &gt; Click on Add a passkey.</p>
+<p><img src="img/23-ms-save-passkey.png" class="img-fluid" alt="Your computer will ask you to save your passkey."> &gt; Your computer will ask you to save your passkey.</p>
+<p><img src="img/24-ms-ok-passkey.png" class="img-fluid" alt="Next, confirm that your passkey was created."> &gt; Next, confirm that your passkey was created.</p>
+<p><img src="img/25-gh-passkey-nickname.png" class="img-fluid" alt="Give the passkey a nickname on GitHub so that you can identify it in the future."> &gt; Give the passkey a nickname on GitHub so that you can identify it in the future.</p>
+<hr>
+</section>
+<section id="sign-up-for-the-digitalwaters-fi-github-organization" class="level2">
+<h2 class="anchored" data-anchor-id="sign-up-for-the-digitalwaters-fi-github-organization">Sign up for the DigitalWaters-fi GitHub organization</h2>
+<p>Only organization members have access to the VRE. You can request access using the <a href="https://forms.cloud.microsoft/pages/responsepage.aspx?id=muScnwFRo0qMdQ1ZNa1lJWEtMFscU0JOr8HqIPYV7uJUN0xYMlpTMVBKOTI2MUVJOFpNMkZaNUdOSi4u&amp;route=shorturl">DigitalWaters-fi organization registration form</a>]</p>
+<p><img src="img/31-org-signup-form.png" class="img-fluid" alt="Fill out the form and submit. If you are not doing this as part of an event, please also send a message to the administrators of the organization on GitHub."> &gt; Fill out the form and submit. If you are not doing this as part of an event, please also send a message to the administrators of the organization on GitHub.</p>
+<p><img src="img/32-gh-organizations.png" class="img-fluid" alt="Next, on GitHub, go to your organizations page."> &gt; Next, on GitHub, go to your organizations page.</p>
+<p><img src="img/33-gh-accept-org.png" class="img-fluid" alt="You should see and invitation to the organization once your form has been processed."> &gt; You should see and invitation to the organization once your form has been processed.</p>
+<p><img src="img/34-gh-join-org.png" class="img-fluid" alt="Confirm that you want to join the organization."> &gt; Confirm that you want to join the organization.</p>
+<p><img src="img/35-gh-org-confirm.png" class="img-fluid" alt="You should now see a confirmation message."> &gt; You should now see a confirmation message.</p>
+<hr>
+</section>
+<section id="launch-a-notebook-on-the-vre" class="level2">
+<h2 class="anchored" data-anchor-id="launch-a-notebook-on-the-vre">Launch a notebook on the VRE</h2>
+<p>Next, go to the <a href="https://github.com/DigitalWaters-fi">DigitalWaters-fi homepage</a></p>
+<p><img src="img/41-open-vre.png" class="img-fluid" alt="Navigate to the Getting Started section and click the link to the Virtual Research Lab."> &gt; Navigate to the <code>Getting Started</code> section and click the link to the <code>Virtual Research Lab</code>.</p>
+<p><img src="img/42-vre-sign-in.png" class="img-fluid" alt="Click Sign in with GitHub"> &gt; Click <code>Sign in with GitHub</code></p>
+<p><img src="img/43-vre-authorize.png" class="img-fluid" alt="Confirm that you want to authorize the Virtual Research Lab application."> &gt; Confirm that you want to authorize the Virtual Research Lab application.</p>
+<p><img src="img/44-vre-select-notebook.png" class="img-fluid" alt="Search for Water, and then select the WaterDigitalization.v1 notebook. It is important to select the version ending with v1 or you will not be able to follow subsequent instructions."> &gt; Search for Water, and then select the WaterDigitalization.v1 notebook. <strong><em>It is important to select the version ending with v1</em></strong> or you will not be able to follow subsequent instructions.</p>
+<p><img src="img/45-vre-launch.png" class="img-fluid" alt="Click Launch"> &gt; [Click <code>Launch</code></p>
+<p><img src="img/46-vre-starting.png" class="img-fluid" alt="You will now see the notebook starting up."> &gt; You will now see the notebook starting up.</p>
+<hr>
+</section>
+<section id="log-into-github-from-the-vre-to-authorize-your-account" class="level2">
+<h2 class="anchored" data-anchor-id="log-into-github-from-the-vre-to-authorize-your-account">Log into GitHub from the VRE to authorize your account</h2>
+<section id="generate-an-ssh-key-on-the-vre" class="level3">
+<h3 class="anchored" data-anchor-id="generate-an-ssh-key-on-the-vre">Generate an SSH key on the VRE</h3>
+<p>This key will be stored in your home folder, which will be available from any notebook on the VRE.</p>
+<p><img src="img/51-jl-launcher.png" class="img-fluid" alt="Launch a Terminal window"> &gt; Launch a <code>Terminal</code> window</p>
+<p><img src="img/52-jl-cli-gh-login.png" class="img-fluid" alt="Type the command gh auth login and press enter."> &gt; Type the command <code>gh auth login</code> and press enter.</p>
+<p><img src="img/53-jl-cli-gh-github.png" class="img-fluid" alt="Select GitHub.com and press enter."> &gt; Select GitHub.com and press enter.</p>
+<p><img src="img/54-jl-cli-gh-protocol.png" class="img-fluid" alt="Select SSH and press enter."> &gt; Select SSH and press enter.</p>
+<p><img src="img/55-jl-cli-gh-gen.png" class="img-fluid" alt="Press enter to confirm you want to generate a new SSH key."> &gt; Press enter to confirm you want to generate a new SSH key.</p>
+<p><img src="img/56-jl-cli-gh-pass.png" class="img-fluid" alt="Enter your passphrase. If your code is not extremely sensitive, you can skip this step and press enter to save extra steps later on. Your work will still be quite secure without a passphrase."> &gt; Enter your passphrase. If your code is not extremely sensitive, you can skip this step and press enter to save extra steps later on. Your work will still be quite secure without a passphrase.</p>
+<p><img src="img/57-jl-cli-gh-title.png" class="img-fluid" alt="Enter a title for your SSH key so that you can remember which one it is in the event that you need to remove authorization."> &gt; Enter a title for your SSH key so that you can remember which one it is in the event that you need to remove authorization.</p>
+<p><img src="img/58-jl-cli-gh-browser.png" class="img-fluid" alt="Select that your want to log in in a web browser."> &gt; Select that your want to log in in a web browser.</p>
+<p><img src="img/59-jl-cli-gh-open.png" class="img-fluid" alt="Copy your code and click the link to open GitHub."> &gt; Copy your code and click the link to open GitHub.</p>
+<blockquote class="blockquote">
+<p>Finally, paste your code into the GitHub window that opens.</p>
+</blockquote>
+</section>
+<section id="authorize-your-account-on-github" class="level3">
+<h3 class="anchored" data-anchor-id="authorize-your-account-on-github">Authorize your account on GitHub</h3>
+<p><img src="img/60-gh-activation.png" class="img-fluid" alt="Confirm that you want to activate your SSH key."> &gt; Confirm that you want to activate your SSH key.</p>
+<p><img src="img/61-gh-authorize.png" class="img-fluid" alt="Confirm that you want to authorize your SSH key."> &gt; Confirm that you want to authorize your SSH key.</p>
+<p><img src="img/62-gh-passkey.png" class="img-fluid" alt="Confirm that you want to sign in with your passkey."> &gt; Confirm that you want to sign in with your passkey.</p>
+<p><img src="img/63-gh-connected.png" class="img-fluid" alt="You should now see a confirmation message."> &gt; You should now see a confirmation message.</p>
+</section>
+<section id="check-that-your-authorization-was-successful" class="level3">
+<h3 class="anchored" data-anchor-id="check-that-your-authorization-was-successful">Check that your authorization was successful</h3>
+<p><img src="img/71-jl-cli-gh-status.png" class="img-fluid" alt="In your terminal on the VRE, type the command gh auth status. You should see a green checkmark if you were successful."> &gt; In your terminal on the VRE, type the command <code>gh auth status</code>. You should see a green checkmark if you were successful.</p>
+<p><img src="img/72-gh-settings.png" class="img-fluid" alt="On the GitHub side, go to your settings page."> &gt; On the GitHub side, go to your settings page.</p>
+<p><img src="img/73-gh-ssh-confirm.png" class="img-fluid" alt="Select SSH and GPG keys. You should now see your new SSH here on GitHub as well."> &gt; Select <code>SSH and GPG keys</code>. You should now see your new SSH here on GitHub as well.</p>
+</section>
+</section>
+<section id="configure-git" class="level2">
+<h2 class="anchored" data-anchor-id="configure-git">Configure <code>git</code></h2>
+<p>Finally, head back to the terminal on the VRE, and enter the following commands, making sure to replace <code>Your Name</code> with your <em>actual</em> name a and <code>your.email@email.com</code> with your <em>actual</em> email. The name and email is required by <code>git</code>. They do not have to match your GitHub account; they are used by your collaborators to see what changes you have made.:</p>
+<pre><code>git config --global user.name "Your Name Here"</code></pre>
+<pre><code>git config --global user.email "your.email@email.com"</code></pre>
+<p>Next, configure your text editor if you wish. The default text editor, <code>vi</code> can be a bit confusing if you are not use to it (but of course you are welcome to use it if you like it!):</p>
+<pre><code>git config --global core.editor nano</code></pre>
+<p>Finally, set your merge strategy. For scientific programming the merge strategy doesn’t usually matter, but having a default selected will make your life easier when you try to pull in changes your collaborators have made. This code sets the strategy to merge rather than rebase or fast-forward, meaning that if there are multiple users making changes at the same time git will attempt to create its own composite change rather than implement the changes sequentially.</p>
+<pre><code>git config --global pull.rebase false</code></pre>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

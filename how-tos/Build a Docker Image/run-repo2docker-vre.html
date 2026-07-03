@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Digital Waters Community Docs</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Digital Waters Community Docs</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="dropdown-header">
+ <span class="menu-text">how-tos/**.qmd</span></li>
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="use-repo2docker-to-jump-start-reproducibility" class="level1">
+<h1>Use <code>repo2docker</code> to jump-start reproducibility</h1>
+<p><a href="https://repo2docker.readthedocs.io/en/latest/"><code>repo2docker</code></a> is a utility maintained by Project Jupyter that creates stable Docker images based on <a href="https://repo2docker.readthedocs.io/en/latest/configuration/#config-files">standard configuration files</a>. It is suitable for Python, R, Python and R together, and Julia environments, and can also install Linux packages if needed.</p>
+<p>In this tutorial, you will: 1. Use <code>cookiecutter</code> to set up a repository that is ready to use for your DIWA VRE-compatible reproducible workflow 2. Use the <a href="https://github.com/jupyterhub/repo2docker-action/blob/master/README.md"><code>repo2docker</code> GitHub Action</a> to build a reproducible image 3. Upload the image to DockerHub, and 4. Start up a container with your environment on the DIWA VRE</p>
+<p>The following diagram shows the different tools you will be using and how they relate to each other.</p>
+<pre class="mermaid"><code>flowchart LR
+    subgraph GitHub
+      id1(GitHub Authentication)
+      id10(GitHub Repository)
+      id11(GitHub Actions)
+      id10 == Configure Image ==&gt; id11
+    end
+    id2(DockerHub)
+    id3(DIWA VRE)
+    id11 == Build and Push Image ==&gt; id2
+    id2 == Run Image as Container ==&gt; id3
+    id1 == Create Account ==&gt; id2
+    id1 == Create Account ==&gt; id3
+    id3 &lt;== Sync Code ==&gt; id10</code></pre>
+<section id="set-up-your-accounts" class="level2">
+<h2 class="anchored" data-anchor-id="set-up-your-accounts">Set up your accounts</h2>
+<section id="before-you-start-make-sure-you-have-a-github-account" class="level3">
+<h3 class="anchored" data-anchor-id="before-you-start-make-sure-you-have-a-github-account">Before you start, make sure you have a GitHub Account</h3>
+<p>You will need a <a href="https://github.com/signup?source=login">GitHub account</a> linked to the DIWA VRE to complete this tutorial. If you don’t, <strong>start at <a href="https://github.com/DigitalWaters-fi/community/blob/main/how-tos/connect-vre-github/connect-vre-github.md">this tutorial</a></strong></p>
+</section>
+<section id="get-started-with-dockerhub" class="level3">
+<h3 class="anchored" data-anchor-id="get-started-with-dockerhub">Get started with DockerHub</h3>
+<p>You can then use that GitHub Account to create a <strong><a href="https://app.docker.com/signup">DockerHub account</a></strong>.</p>
+<section id="go-to-dockerhub-and-select-continue-with-github" class="level4">
+<h4 class="anchored" data-anchor-id="go-to-dockerhub-and-select-continue-with-github">Go to <a href="https://app.docker.com/signup">DockerHub</a> and select <code>Continue with Github</code></h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/00-dockerhub.png" class="img-fluid figure-img"></p>
+<figcaption>Go to <a href="https://app.docker.com/signup">DockerHub</a> and select <code>Continue with Github</code></figcaption>
+</figure>
+</div>
+</section>
+<section id="authorize" class="level4">
+<h4 class="anchored" data-anchor-id="authorize">Authorize</h4>
+<p><img src="img/01-authorize.png" class="img-fluid"></p>
+</section>
+<section id="follow-instruction-to-verify-your-email" class="level4">
+<h4 class="anchored" data-anchor-id="follow-instruction-to-verify-your-email">Follow instruction to verify your email</h4>
+<p>You should receive an email with instructions on verifying your account. Once you finish, you can navigate to the <a href="https://hub.docker.com">DockerHub homepage</a> if you are not there already.</p>
+<p><img src="img/03-docker-home.png" class="img-fluid"></p>
+</section>
+</section>
+</section>
+<section id="build-your-environment" class="level2">
+<h2 class="anchored" data-anchor-id="build-your-environment">Build your environment</h2>
+<section id="start-out-with-our-cookiecutter" class="level3">
+<h3 class="anchored" data-anchor-id="start-out-with-our-cookiecutter">Start out with our cookiecutter</h3>
+<p>We have prepared a template repository, and you can fill in your details using the cookiecutter utility.</p>
+<section id="open-a-cookiecutter-image-on-the-diwa-vre" class="level4">
+<h4 class="anchored" data-anchor-id="open-a-cookiecutter-image-on-the-diwa-vre">Open a cookiecutter image on the DIWA VRE</h4>
+<p>Start by logging into the <a href="https://diwa-data-lab-vre.rahtiapp.fi/">DIWA VRE</a>. From the home page, select <code>Custom Image</code>, paste <code>eculler/diwa_repo_cookiecutter</code> into the image field, and click <code>Launch</code></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/31-launch-cookiecutter.png" class="img-fluid figure-img"></p>
+<figcaption>Open a cookiecutter image on the DIWA VRE</figcaption>
+</figure>
+</div>
+</section>
+<section id="run-the-cookiecutter-command-in-the-terminal" class="level4">
+<h4 class="anchored" data-anchor-id="run-the-cookiecutter-command-in-the-terminal">Run the cookiecutter command in the Terminal</h4>
+<p>Open a Terminal tab, and run the following command, and respond to the prompts with information about <em>your</em> project:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cookiecutter</span> https://github.com/LizCarter492/DIWA_repo_cookiecutter</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/32-run-cookiecutter.png" class="img-fluid figure-img"></p>
+<figcaption>Run cookiecutter and respond to prompts</figcaption>
+</figure>
+</div>
+<p>You should now see a folder titled with your chosen project slug in your home directory:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/33-view-new-project.png" class="img-fluid figure-img"></p>
+<figcaption>Your new project is now in your home folder.</figcaption>
+</figure>
+</div>
+<p>The project directory should also contain the DIWA cookiecutter template files:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/34-view-contents.png" class="img-fluid figure-img"></p>
+<figcaption>The new project contains the cookiecutter template files.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="sync-your-project-with-github" class="level3">
+<h3 class="anchored" data-anchor-id="sync-your-project-with-github">Sync your project with GitHub</h3>
+<p><a href="https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github#adding-a-local-repository-to-github-with-github-cli">Follow these instructions from GitHub</a> to create a new GitHub repository out of your project directory.</p>
+<blockquote class="blockquote">
+<p>If you are using an older version of the diwa_repo_cookiecutter image, then you will have a few extra steps. First, you will need to follow <a href="https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github#adding-a-local-repository-to-github-using-git">the instructions for adding your repository from git</a>.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>Make sure that when you are linking your repository on the VRE to the remote origin on GitHub that you select SSH authentication!!!</strong></p>
+</blockquote>
+<blockquote class="blockquote">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/35-select-ssh.png" class="img-fluid figure-img"></p>
+<figcaption>Select SSH authentication when linking to the remote origin.</figcaption>
+</figure>
+</div>
+</blockquote>
+<p>You should now be able to see your project on GitHub:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/36-view-repository.png" class="img-fluid figure-img"></p>
+<figcaption>View your new repository on GitHub.</figcaption>
+</figure>
+</div>
+</section>
+<section id="give-github-actions-access-to-push-to-dockerhub" class="level3">
+<h3 class="anchored" data-anchor-id="give-github-actions-access-to-push-to-dockerhub">Give GitHub Actions access to push to DockerHub</h3>
+<p>Images are a launchable record of all the setup steps needed for code to run. This is an important part of reproducibility, because it is difficult for someone else to create a computing environment that exactly meets the needs of your workflow. DockerHub lets you share images just like GitHub lets you share code, and GitHub Actions is useful for building images. All you need is to be able to upload your image once it is complete!</p>
+<section id="create-a-personal-access-token-on-dockerhub" class="level4">
+<h4 class="anchored" data-anchor-id="create-a-personal-access-token-on-dockerhub">Create a Personal access token on DockerHub</h4>
+<section id="go-to-dockerhub-account-settings" class="level5">
+<h5 class="anchored" data-anchor-id="go-to-dockerhub-account-settings">Go to DockerHub account settings</h5>
+<p><img src="img/10-settings.png" class="img-fluid"></p>
+</section>
+<section id="select-personal-access-tokens" class="level5">
+<h5 class="anchored" data-anchor-id="select-personal-access-tokens">Select <code>Personal access tokens</code></h5>
+<p>You may need to scroll down in the menu on the left.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/11-tokens.png" class="img-fluid figure-img"></p>
+<figcaption>Select <code>Personal access tokens</code></figcaption>
+</figure>
+</div>
+</section>
+<section id="select-generate-new-token" class="level5">
+<h5 class="anchored" data-anchor-id="select-generate-new-token">Select <code>Generate new token</code></h5>
+<p><img src="img/12-create-token.png" class="img-fluid"></p>
+</section>
+<section id="add-a-description-click-generate-token-select-read-and-write-permissions-and-copy-it" class="level5">
+<h5 class="anchored" data-anchor-id="add-a-description-click-generate-token-select-read-and-write-permissions-and-copy-it">Add a description, click <code>Generate token</code>, select Read and Write permissions, and copy it</h5>
+<p><img src="img/13-configure-token.png" class="img-fluid"></p>
+<p>Make sure to copy!</p>
+</section>
+</section>
+<section id="add-the-pat-to-github" class="level4">
+<h4 class="anchored" data-anchor-id="add-the-pat-to-github">Add the PAT to GitHub</h4>
+<section id="return-to-your-github-repository" class="level5">
+<h5 class="anchored" data-anchor-id="return-to-your-github-repository">Return to your GitHub repository</h5>
+<p>Next, navigate to the repository you are working on in GitHub. You can create a DIWA VRE and <code>repo2docker</code>-compatible repository using our cookiecutter.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/21-github-repo.png" class="img-fluid figure-img"></p>
+<figcaption>Return to your GitHub repository</figcaption>
+</figure>
+</div>
+</section>
+<section id="navigate-to-settings" class="level5">
+<h5 class="anchored" data-anchor-id="navigate-to-settings">Navigate to Settings</h5>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/22-settings.png" class="img-fluid figure-img"></p>
+<figcaption>Navigate to Settings</figcaption>
+</figure>
+</div>
+</section>
+<section id="select-actions-secrets" class="level5">
+<h5 class="anchored" data-anchor-id="select-actions-secrets">Select Actions Secrets</h5>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/23-new-secret.png" class="img-fluid figure-img"></p>
+<figcaption>Select Actions Secrets</figcaption>
+</figure>
+</div>
+</section>
+<section id="add-your-dockerhub-credentials-as-repository-secrets" class="level5">
+<h5 class="anchored" data-anchor-id="add-your-dockerhub-credentials-as-repository-secrets">Add your DockerHub credentials as repository secrets</h5>
+<p>The secrets must be named EXACTLY <code>DOCKER_USERNAME</code> and <code>DOCKER_PASSWORD</code>. However, the <em>values</em> of the secrets should <em>not</em> match what you see here – they should be <em>your</em> docker username and PAT.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/24-user-secret.png" class="img-fluid figure-img"></p>
+<figcaption>Add your DockerHub username s as a repository secret named DOCKER_USERNAME</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/25-pass-secret.png" class="img-fluid figure-img"></p>
+<figcaption>Add your DockerHub token as a repository secret named DOCKER_PASSWORD</figcaption>
+</figure>
+</div>
+<p>Once you have added the secrets make sure you check that the names are correct! Otherwise GitHub Actions will not be able to find the values you saved.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/26-check-secrets.png" class="img-fluid figure-img"></p>
+<figcaption>Check the names!</figcaption>
+</figure>
+</div>
+</section>
+</section>
+</section>
+<section id="configure-your-environment" class="level3">
+<h3 class="anchored" data-anchor-id="configure-your-environment">Configure your environment</h3>
+<p>The next step is to make sure that you have put all your <strong>configuration files</strong> into your repository. That means environment.yml (conda) or requirements.txt (pip) for Python libraries, and install.R for R libraries. If you want to use R and Python together, you will also need a <code>runtime.txt</code> file with the version and date of R that you want to use. You can check out the <a href="https://repo2docker.readthedocs.io/en/latest/start/"><code>repo2docker</code> documentation</a> for more information on other types of configurations.</p>
+<p>When you use cookiecutter, you should have examples of common configuration files already in your repository. However, you will need to customize them with the particular packages or libraries that you are using. Extra configuration files or packages will cause the build to take longer, so make sure you remove anything you don’t need!</p>
+<p>At this point, if you already have code elements, you should move them into the notebooks folder of this repository.</p>
+</section>
+<section id="go-to-the-actions-tab-on-github" class="level3">
+<h3 class="anchored" data-anchor-id="go-to-the-actions-tab-on-github">Go to the Actions tab on GitHub</h3>
+<blockquote class="blockquote">
+<p>You may need to enable Actions depending on how you created your repository.</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/41-actions.png" class="img-fluid figure-img"></p>
+<figcaption>Go to the Actions tab on GitHub</figcaption>
+</figure>
+</div>
+</section>
+<section id="select-the-build-and-push-container-workflow-and-run-it." class="level3">
+<h3 class="anchored" data-anchor-id="select-the-build-and-push-container-workflow-and-run-it.">Select the Build and Push Container workflow and run it.</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/42-build-container.png" class="img-fluid figure-img"></p>
+<figcaption>Select the Build and Push Container workflow and run it.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="try-your-environment-on-the-vre" class="level2">
+<h2 class="anchored" data-anchor-id="try-your-environment-on-the-vre">Try your environment on the VRE</h2>
+<p>You now have all the ingredients to run your workflow reproducibly on the DIWA VRE! First, you need to get the name of your image from DockerHub.</p>
+<section id="navigate-to-your-repository-page-on-dockerhub" class="level3">
+<h3 class="anchored" data-anchor-id="navigate-to-your-repository-page-on-dockerhub">Navigate to your repository page on DockerHub</h3>
+<p>Making sure that you are logged in, head to the <a href="https://hub.docker.com/repositories/">repository page on DockerHub</a>. Once there, identify the repository in DockerHub with the same name as your GitHub repository and click on the page.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/51-go-to-repository.png" class="img-fluid figure-img"></p>
+<figcaption>Select the repository for this project on DockerHub.</figcaption>
+</figure>
+</div>
+</section>
+<section id="select-the-most-recent-tag" class="level3">
+<h3 class="anchored" data-anchor-id="select-the-most-recent-tag">Select the most recent tag</h3>
+<p><strong>If you are actively developing your image configuration, it is important NOT to use the “latest” tag from DockerHub!</strong> If you do this and then make changes, your changes will not show up on the VRE. Instead, select the most recent tag that is <strong>not</strong> “latest”. This will be the same as “latest”, but you will not have the same caching problem.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/52-select-tag.png" class="img-fluid figure-img"></p>
+<figcaption>Select the most recent tag that is not latest.</figcaption>
+</figure>
+</div>
+</section>
+<section id="copy-the-name-of-your-dockerhub-repository-with-tag" class="level3">
+<h3 class="anchored" data-anchor-id="copy-the-name-of-your-dockerhub-repository-with-tag">Copy the name of your DockerHub repository with tag</h3>
+<p>From this page, copy the name of the repository including the tag. It should look something like <code>yourusername/your_project_slug:tag14arg8704</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/53-copy-tag.png" class="img-fluid figure-img"></p>
+<figcaption>Copy the name of your DockerHub repository with tag.</figcaption>
+</figure>
+</div>
+</section>
+<section id="start-your-custom-image-on-the-diwa-vre" class="level3">
+<h3 class="anchored" data-anchor-id="start-your-custom-image-on-the-diwa-vre">Start your custom image on the DIWA VRE</h3>
+<p>Shut down your server if it is still running. Then, start another custom image, this time using the repository and tag name you copied from DockerHub.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/54-launch-image.png" class="img-fluid figure-img"></p>
+<figcaption>Start your custom image on the DIWA VRE.</figcaption>
+</figure>
+</div>
+</section>
+<section id="run-your-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="run-your-workflow">Run your workflow!</h3>
+<p>All the packages and software you need should now be installed. If they are not, check your configuration files and make sure you are not using a cached Docker image.</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
