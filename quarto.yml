@@ -1,0 +1,16 @@
+project:
+  type: website
+
+website:
+  title: "Digital Waters Community Docs"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - "how-tos/**.qmd"
+
+format:
+  html:
+    theme: 
+      - pulse
+      - custom.scss 
