@@ -1,4 +1,6 @@
-# Use `repo2docker` to jump-start reproducibility
+---
+title: Use `repo2docker` to jump-start reproducibility
+---
 
 [`repo2docker`](https://repo2docker.readthedocs.io/en/latest/) is a utility maintained by Project Jupyter that creates stable Docker images based on [standard configuration files](https://repo2docker.readthedocs.io/en/latest/configuration/#config-files). It is suitable for Python, R, Python and R together, and Julia environments, and can also install Linux packages if needed.
 
