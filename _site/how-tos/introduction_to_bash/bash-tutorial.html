@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Digital Waters Community Docs</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Digital Waters Community Docs</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="dropdown-header">
+ <span class="menu-text">how-tos/**.qmd</span></li>
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="bash-for-file-management" class="level1">
+<h1>Bash for file management</h1>
+<section id="objectives" class="level2">
+<h2 class="anchored" data-anchor-id="objectives">Objectives:</h2>
+<p>In reproducible scientific computing, the goal is to permit someone to recreate our scientific workflows step by step. This tutorial will help you to build reproducible scientific workflows by teaching you to interact with your computer using text commands, instead of your mouse and graphical user interfaces. These text commands represent a record of what software was used, what operations were run, and on what data that is <em>automatable</em>, or capable of running without human interaction.</p>
+<p>By the end of this tutorial you will be able to: 1. Define terminal, shell, and Bash; and explain why we use them for scientific computing. 2. Open a terminal window on the DIWA DataLab. 3. Identify text-based file paths to documents on your computer. 4. Interpret file path structure of documents/data on online geodatabases. 5. Run Bash commands to navigate files on your computer.</p>
+<p>Please see the companion file “Bash-cheat-sheet.md” to keep track of these common commands.</p>
+</section>
+<section id="part-1-the-language-of-computers" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-the-language-of-computers">Part 1: The language of computers</h2>
+<p>First, some definitions. * <strong>Terminal</strong>: A terminal is an input/output device or software interface that allows a user to communicate with an operating system or remote computer using typed commands rather than graphical controls. In the DIWA DataLab, when we open a <strong>terminal</strong>, we open a window based-interface to type commands that emmulate common interactions you have with your computer using a mouse. * <strong>Shell</strong>: The word shell in this context has two meanings. First, and most commonly used, the shell is the language that you type in the terminal. It is the program that interprets commands to your computer. Just to make things confusing, shell also refers to a specific type of shell (this would be similar to someone naming a car brand “Car”). If you have a Windows operating system, your shell is called <em>CMD</em>. If you have a Mac or Linux operating system, your shell is called “Bash.” Our DIWA DataLab has a Linux operating system, so we will learn commands to the Bash shell. * <strong>CLI (Command Line Interface)</strong>: On your laptop or PC, there are two ways to interact with your shell. If you are typing commands in to the terminal using your keyboard, you are interacting with your shell’s CLI. * <strong>GUI (Graphical User Interface)</strong>: The other way to interact with your shell involves a lot more use of your computer’s mouse. If you are navigating files and running software by pointing and clicking on graphic icons displayed on your screen, you are using your shell’s GUI (note GUI is pronounced like the English word “gooey”)</p>
+<p>The <strong>CLI</strong> and <strong>GUI</strong> are two different ways of interacting with your shell, but they do the same thing. Every time you point and click on an icon to complete a task on your computer, there is a corresponding text command that could be typed into the <strong>CLI</strong>, achieving the same result.</p>
+<p><em>Figure 1.1: A “teletypewriter” was the first kind of terminal. Rather than a screen you’d have a literal typewriter in front of you. When you type on it, you’re seeing the text on a piece of paper AND inputting that text into a computer. When that computer replies, you’ll see the typewriter automatically type on the same paper.</em></p>
+<section id="shells-in-scientific-computing" class="level3">
+<h3 class="anchored" data-anchor-id="shells-in-scientific-computing">Shells in scientific computing</h3>
+<p>To recap, the <strong>shell</strong> is the program that takes commands and gives them to your computer (your computer’s language).</p>
+<p>There is a <strong>shell</strong> named shell, also known as Unix or sh, which is the most common language spoken by computers.The <strong>shell</strong> is the original Unix command interpreter (dating back to the 1970s).</p>
+<p><strong>Bash</strong>, was released in 1989, is a later, GNU-developed (aka open source) shell that extended and standardized earlier shells like <code>sh</code> with more features and scripting capabilities.</p>
+<p><em>Quick punny title interlude: Bourne Again SHell gives a cheeky nod the Stephen Bourne, who originally developed shell, and suggests that it was “born again” with new features. One of this “new” features is its “GNU-ness”. Here, GNU (pronounced like the English word “new”) stands for “GNU’s Not Unix” — a recursive acronym coined to emphasize that while GNU is Unix-like, it is completely free software and not derived from the proprietary Unix code.</em></p>
+<p>Our DIWA DataLab, like most high performance computing/scientific computing systems, speaks <em>Bash</em>. We pick this GNU shell because we care a lot about this free and open source component.</p>
+<p>Because <em>Bash</em> was developed from <em>shell</em>, <em>Bash</em> can always speak <em>shell</em>, but <em>shell</em> doesn’t have all the commands you can access with <em>Bash</em>. Still, nowadays ”shell script” and “Bash script” are used interchangeably; assume “sh” = “Bash.”</p>
+<p>As mentioned above, Windows computers have their own shell called <em>CMD.</em> <em>CMD</em> doesn’t speak <em>Bash</em>, and <em>Bash</em> doesn’t speak <em>CMD</em>. This because CMD is a proprietary shell: it generates file types that can only be read by Windows machines. Bash is an open-source shell, it generates file types that can be read by all machines (including Windows)</p>
+<p><strong>Why does this proprietary verses open source thing matter (keywords: version control and reproducible research)?</strong></p>
+</section>
+<section id="common-pitfalls-you-might-encounter-moving-datafilescode-developed-in-a-windows-os-to-a-linux-os-like-our-diwa-datalab" class="level3">
+<h3 class="anchored" data-anchor-id="common-pitfalls-you-might-encounter-moving-datafilescode-developed-in-a-windows-os-to-a-linux-os-like-our-diwa-datalab">Common pitfalls you might encounter moving data/files/code developed in a Windows OS to a Linux OS (like our DIWA DataLab)</h3>
+<p>These differences between Bash and cmd means that Windows users might encounter some unexpected translation issues when they move files to a scientific computing. Common things to look out for can be found on our <a href="https://github.com/DigitalWaters-fi/community/blob/main/how-tos/introduction_to_bash/windows-to-linux-cheatsheet.md">windows-to-linux-cheatsheet</a></p>
+</section>
+</section>
+<section id="part-2-getting-to-know-your-computer-through-terminal" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-getting-to-know-your-computer-through-terminal">Part 2: getting to know your computer through terminal</h2>
+<section id="to-access-the-terminal-cli-for-your-shell-on-your-computer" class="level3">
+<h3 class="anchored" data-anchor-id="to-access-the-terminal-cli-for-your-shell-on-your-computer">To access the terminal (CLI for your shell) on your computer:</h3>
+<ul>
+<li>WINDOWS: Press Windows Key + r, type “cmd”, Enter</li>
+<li>Mac: Press Command + space, type “terminal”, Enter</li>
+<li>Ubuntu (Linux): Press Ctrl + Alt + T</li>
+<li>DIWA DataLab: in a Notebook image, File &gt; New &gt; Terminal</li>
+</ul>
+<p><em>Figure 2.1: Accessing terminal in DIWA DataLab</em></p>
+</section>
+<section id="using-terminal-to-understand-your-computer-system" class="level3">
+<h3 class="anchored" data-anchor-id="using-terminal-to-understand-your-computer-system">Using terminal to understand your computer system:</h3>
+<p>In a Microsoft or Mac, you can use “Settings” and either “Task Manager” or “Activity Monitory” to learn important information about the hardware type, hardware usage, OS type, and software settings on your computer. Here is a quick walk through of bash commands that let you get similar information.</p>
+<section id="check-what-shell-you-are-running" class="level4">
+<h4 class="anchored" data-anchor-id="check-what-shell-you-are-running">Check what shell you are running:</h4>
+<p>If you type the following text into your terminal, it will tell you which shell you are running</p>
+<p><code>echo $SHELL</code></p>
+<p><em>Figure 2.2: On the DIWA DataLab, our shell is </em>Bash*</p>
+</section>
+<section id="check-available-storage" class="level4">
+<h4 class="anchored" data-anchor-id="check-available-storage">Check available storage”</h4>
+<p>To show disk usage for all mounted filesystems</p>
+<p><code>df -h</code></p>
+<p>To show the size of files and directories (in your current directory, to see what that means see “File Management” below)</p>
+<p><code>du -sh *</code></p>
+</section>
+<section id="check-available-ram-and-system-memory" class="level4">
+<h4 class="anchored" data-anchor-id="check-available-ram-and-system-memory">Check available RAM and system memory</h4>
+<p>Show memory usage in human-readable format</p>
+<p><code>free -h</code></p>
+<p>Show detailed memory and swap usage</p>
+<p><code>cat /proc/meminfo</code></p>
+</section>
+<section id="check-your-processers" class="level4">
+<h4 class="anchored" data-anchor-id="check-your-processers">Check your processers</h4>
+<p>Show CPU information <code>lscpu</code></p>
+<p>Check number of CPU cores (logical + physical)</p>
+<pre><code>nproc            # Number of processing units available
+grep -c ^processor /proc/cpuinfo   # Number of logical CPUs</code></pre>
+<p>When you are running different modelling applications, we often want to check real-time usage of your CPU to make it is not being overutilized. We can do that here using:</p>
+<pre><code>top              # Interactive process monitor</code></pre>
+<p>To exit this dashboard, type Ctrl + C.</p>
+</section>
+<section id="check-installed-software-and-available-commands" class="level4">
+<h4 class="anchored" data-anchor-id="check-installed-software-and-available-commands">Check installed software and available commands</h4>
+<p>Just like you can use your Start menu to browse software on Windows, you can list all installed packages with the following command:</p>
+<pre><code>dpkg -l</code></pre>
+<p>Note: these are Bash pacakges, not R or python packages. To see python packages, we would type<code>pip list</code> For pip installed packages, and <code>conda list</code> for conda installed packages. More on this later.</p>
+<p>Running software from Terminal is very easy, all you have to do is type in the name of the software. For example, if we type <code>ipython</code>, we open ipython, a simple Bash-based python IDE:</p>
+<p><em>Figure 2.4: typing <code>ipython</code> opens up ipython software, so now I type commands in using the Python programming language, not Bash. To quit this python application and go back to Bash, I enter the python command <code>quit</code>.</em></p>
+</section>
+<section id="using-terminal-to-navigate-files-on-your-computer" class="level4">
+<h4 class="anchored" data-anchor-id="using-terminal-to-navigate-files-on-your-computer">Using terminal to navigate files on your computer</h4>
+<p>Depending on how you have your operating system configured, the structure software, libraries, and hardware drivers on your computer will be developed more or less automatically. This is not the case for files you make and store yourself!</p>
+<p>When we are using a GUI interface for our computer, we will click on the file explorer to navigate file paths. One of the trickier skills for new programmers is learning how to correctly “write the address” (or filepath) to files and folders that they have created in their compute environment.</p>
+<p>When you are entering commands into Terminal, the working directory is the folder your terminal is “currently in.” Any commands you run (like opening, creating, or moving files) will happen relative to this folder unless you specify a full filepath. If you specify a full file path, it has to be relative to the same directory.</p>
+<p><em>Figure 2.3: in Terminal, I can see where my computer is referencing filepaths using the text indicated to the left of my cursor. Here, the ~ symbol indicates that I am in my “home” directory. I automatically go to home any time I launch a new server</em></p>
+<p>I can also see my current working directory using the pwd (print working directory) command <code>pwd</code></p>
+<p>In Bash, we can use the mkdir (make directory) command to create new folders in our environment. So entereing the command: <code>mkdir one</code> in Terminal will create a new folder called “one” in your persistent or long-term storage. This folder called “one” will remain stored in your DIWA DataLab until you delete it: if you quit this server and log back in, it will still be available to you.</p>
+<p>In a notebook instance of the DIWA DataLab, the left hand menu bar serves like the graphical “File Explorer” on your Windows or Mac computer. You can use your mouse to explore files you’ve created. If you look over to the left, you should see a folder called “one” in that left-hand menu bar.</p>
+<p>The cd (change directory) command lets you move into a new folder. So entering the command: <code>cd one</code></p>
+<p>Will move you into the folder called “one”. The filepath indicated to the left of your curser has changed.</p>
+<p>Type <code>pwd</code> from within the “one’ folder and hit enter. What has changed?</p>
+<p>Often we are working in nested folders: folders inside of folders. Let’s make some nested folders using the following commands, started from working directory “one”:</p>
+<pre><code>mkdir two    #make directory called "one"
+cd two       #change to directory "one"
+mkdir three
+cd three
+mkdir four
+cd four
+pwd         #print current working directory</code></pre>
+<p>What is your current working directory? How is this represented in the text next to your cursor? How has your left hand file menu changed? Use your mouse to find your current <strong>working directory</strong>.</p>
+<p><code>pwd</code> is telling you your current filepath. If we want to make a file called “data.txt” at this filepath address, we can use the <code>cat</code> command.</p>
+<pre><code>cat data.txt
+```
+
+You'll notice that the filepath next to your curser has gone away. This is because you are now editing the data.txt file directly. Enter some data"
+</code></pre>
+<p>Name: Gandolf Age: 141 Address: c/o the Shire Ctrl + D # This last line closes and saves the file, bringing you back to Bash</p>
+<pre><code>Using your left file menu, find and open the data.txt file.
+
+To open the notebook in Terminal, type `cat data.txt`. To exit the text file and go back to Bash, `Ctrl+D`
+
+#### Change directory shortcuts
+Changing directories is something that you will do often. Here are some common shortcuts to reduce your typing time:</code></pre>
+<p>cd folder #move to folder cd ~ #go home cd .. #go up one level in the file structure cd – #go back to your previous directory</p>
+<pre><code>
+## Part 3: a tragic interlude for justice
+Now we have gotten our start with Bash commands, it's time to see how we can use them to automate big file management. To learn what you must do and what is at stake, enter the following command into your terminal:
+</code></pre>
+<p>cd ~ # make sure you are in your home directory git clone https://github.com/veltman/clmystery # clone, or copy, a git repository authored by user “veltman” called “clmystery” cd clmystery # move into the new cloned repository ls # list everything in the currenet working directory cat instructions # read the instructions file</p>
+
+
+</section>
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/DigitalWaters-fi\.github\.io\/community\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
