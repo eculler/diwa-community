@@ -1,0 +1,22 @@
+name: community-site-
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.12
+
+  # GitHub CLI
+  - gh
+
+  # In-browser quarto editing
+  - jupyter-server-proxy
+  - code-server
+
+  # Quarto build Python dependencies
+
+  # Jupyter extensions
+  - pip
+  - pip:
+      - jupyterlab-quarto
+      - jupyter-code-server
