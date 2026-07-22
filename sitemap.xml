@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://DigitalWaters-fi.github.io/community/how-tos/sync-fork/sync-fork.html</loc>
-    <lastmod>2026-07-03T11:51:53.920Z</lastmod>
-  </url>
-  <url>
-    <loc>https://DigitalWaters-fi.github.io/community/how-tos/connect-vre-github/connect-vre-github.html</loc>
-    <lastmod>2026-07-03T11:51:53.885Z</lastmod>
-  </url>
-  <url>
-    <loc>https://DigitalWaters-fi.github.io/community/how-tos/Install Conda as kernals/Read.html</loc>
-    <lastmod>2026-07-03T11:51:53.885Z</lastmod>
-  </url>
-  <url>
-    <loc>https://DigitalWaters-fi.github.io/community/how-tos/introduction_to_bash/bash-tutorial.html</loc>
-    <lastmod>2026-07-03T11:51:53.916Z</lastmod>
-  </url>
-  <url>
     <loc>https://DigitalWaters-fi.github.io/community/how-tos/introduction_to_bash/windows-to-linux-cheatsheet.html</loc>
-    <lastmod>2026-07-03T11:51:53.918Z</lastmod>
-  </url>
-  <url>
-    <loc>https://DigitalWaters-fi.github.io/community/how-tos/diwa-datalab/introduction-vre.html</loc>
-    <lastmod>2026-07-03T11:51:53.915Z</lastmod>
+    <lastmod>2026-07-22T11:51:55.032Z</lastmod>
   </url>
   <url>
     <loc>https://DigitalWaters-fi.github.io/community/how-tos/Bug Report Guidelines/Readme.html</loc>
-    <lastmod>2026-07-03T11:51:53.833Z</lastmod>
-  </url>
-  <url>
-    <loc>https://DigitalWaters-fi.github.io/community/how-tos/connect-vre-github/fork-and-clone.html</loc>
-    <lastmod>2026-07-03T11:51:53.887Z</lastmod>
+    <lastmod>2026-07-22T11:51:54.959Z</lastmod>
   </url>
   <url>
     <loc>https://DigitalWaters-fi.github.io/community/how-tos/Build a Docker Image/run-repo2docker-vre.html</loc>
-    <lastmod>2026-07-03T11:51:53.885Z</lastmod>
+    <lastmod>2026-07-22T11:51:55.004Z</lastmod>
+  </url>
+  <url>
+    <loc>https://DigitalWaters-fi.github.io/community/how-tos/connect-vre-github/connect-vre-github.html</loc>
+    <lastmod>2026-07-22T11:51:55.004Z</lastmod>
+  </url>
+  <url>
+    <loc>https://DigitalWaters-fi.github.io/community/how-tos/connect-vre-github/fork-and-clone.html</loc>
+    <lastmod>2026-07-22T11:51:55.005Z</lastmod>
+  </url>
+  <url>
+    <loc>https://DigitalWaters-fi.github.io/community/how-tos/Install Conda as kernals/Read.html</loc>
+    <lastmod>2026-07-22T11:51:55.004Z</lastmod>
+  </url>
+  <url>
+    <loc>https://DigitalWaters-fi.github.io/community/how-tos/sync-fork/sync-fork.html</loc>
+    <lastmod>2026-07-22T11:51:55.034Z</lastmod>
+  </url>
+  <url>
+    <loc>https://DigitalWaters-fi.github.io/community/how-tos/introduction_to_bash/bash-tutorial.html</loc>
+    <lastmod>2026-07-22T11:51:55.030Z</lastmod>
+  </url>
+  <url>
+    <loc>https://DigitalWaters-fi.github.io/community/how-tos/diwa-datalab/introduction-vre.html</loc>
+    <lastmod>2026-07-22T11:51:55.030Z</lastmod>
   </url>
 </urlset>
