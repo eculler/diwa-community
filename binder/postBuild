@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+QUARTO_VERSION="1.7.34"
+
+INSTALL_PREFIX="${CONDA_DIR:-/srv/conda}"
+QUARTO_DIR="${INSTALL_PREFIX}/opt/quarto-${QUARTO_VERSION}"
+QUARTO_ARCHIVE="/tmp/quarto.tar.gz"
+
+# Download Quarto
+curl \
+  --fail \
+  --silent \
+  --show-error \
+  --location \
+  "https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.tar.gz" \
+  --output "${QUARTO_ARCHIVE}"
+
+# Extract Quarto archive
+mkdir -p "${QUARTO_DIR}"
+tar \
+  --extract \
+  --gzip \
+  --file "${QUARTO_ARCHIVE}" \
+  --directory "${QUARTO_DIR}" \
+  --strip-components=1
+
+# Install Quarto
+ln -sfn \
+  "${QUARTO_DIR}/bin/quarto" \
+  "${INSTALL_PREFIX}/bin/quarto"
+
+# Clean up
+rm -f "${QUARTO_ARCHIVE}"
