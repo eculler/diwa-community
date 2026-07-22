@@ -1,2 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+# Allow VSCode without a password
 export CODE_DISABLE_PASSWORD=true
+
+# Start Jupyter Lab
+exec "$@"
