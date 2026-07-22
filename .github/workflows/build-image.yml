@@ -16,7 +16,7 @@ permissions:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: eculler/community-site-dev
+  IMAGE_NAME: ${{ github.repository_owner }}/community-site-dev
 
 jobs:
   build:
