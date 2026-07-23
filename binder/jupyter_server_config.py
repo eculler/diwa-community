@@ -35,6 +35,14 @@ workspace = Path.home() / "diwa-community"
 os.environ.setdefault("CODE_DISABLE_PASSWORD", "true")
 os.environ["CODE_WORKING_DIRECTORY"] = str(workspace)
 
+setup_command = r'''
+diwa-community-site-setup
+status=$?
+printf '\nSetup process exited with status %s.\n' "$status"
+printf 'Review the output above. Close this tab when finished.\n\n'
+exec bash
+'''
+
 c.ServerProxy.servers = {
     "diwa-community-site-setup": {
         "command": [
@@ -42,7 +50,9 @@ c.ServerProxy.servers = {
             "--writable",
             "--port",
             "{port}",
-            "diwa-community-site-setup",
+            "bash",
+            "-lc",
+            setup_command,
         ],
         "timeout": 30,
         "launcher_entry": {
