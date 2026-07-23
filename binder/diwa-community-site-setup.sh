@@ -50,28 +50,8 @@ selected_git_protocol() {
   gh config get git_protocol --host github.com 2>/dev/null || printf 'https\n'
 }
 
-validate_ssh_if_selected() {
-  local protocol
-  protocol="$(selected_git_protocol)"
-  say "Step 3: Validate the selected Git protocol ($protocol)"
-
-  if [[ "$protocol" != "ssh" ]]; then
-    echo "HTTPS is selected; SSH connectivity testing is not required."
-    return
-  fi
-
-  echo "Testing SSH access to GitHub..."
-  if ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new -T git@github.com 2>&1 | grep -q 'successfully authenticated'; then
-    echo "SSH authentication is working."
-  else
-    echo "SSH authentication could not be confirmed automatically."
-    echo "GitHub CLI may still have uploaded or generated a key during sign-in."
-    echo "Run 'ssh -T git@github.com' to inspect the result before using SSH remotes."
-  fi
-}
-
 ensure_fork() {
-  say "Step 4: Find or create your fork"
+  say "Step 3: Find or create your fork"
   local login fork
   login="$(gh api user --jq .login)"
   fork="$login/community"
@@ -88,7 +68,8 @@ ensure_fork() {
 
 ensure_clone() {
   local fork="$1"
-  say "Step 5: Clone or validate the DIWA Community Site repository"
+  local protocol
+  say "Step 4: Clone or validate the DIWA Community Site repository"
 
   if git -C "$WORKSPACE" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
     echo "Repository already exists at $WORKSPACE."
@@ -97,8 +78,15 @@ ensure_clone() {
 
   [[ ! -e "$WORKSPACE" ]] || fail "$WORKSPACE exists but is not a Git repository. Move or remove it, then rerun setup."
 
-  echo "Cloning $fork into $WORKSPACE..."
-  gh repo clone "$fork" "$WORKSPACE"
+  protocol="$(selected_git_protocol)"
+  echo "Cloning $fork into $WORKSPACE using $protocol..."
+  if ! gh repo clone "$fork" "$WORKSPACE"; then
+    if [[ "$protocol" == "ssh" ]]; then
+      fail "The repository could not be cloned over SSH. Check the SSH error above, then verify the key with 'ssh -T git@github.com' or switch GitHub CLI to HTTPS with 'gh config set git_protocol https --host github.com'."
+    fi
+
+    fail "The repository could not be cloned over HTTPS. Check the Git error above and rerun 'gh auth status --hostname github.com'."
+  fi
 }
 
 ensure_remotes() {
@@ -114,7 +102,7 @@ ensure_remotes() {
     upstream_url="https://github.com/${UPSTREAM_REPO}.git"
   fi
 
-  say "Step 6: Validate Git remotes"
+  say "Step 5: Validate Git remotes"
   git -C "$WORKSPACE" remote set-url origin "$origin_url"
   if git -C "$WORKSPACE" remote get-url upstream >/dev/null 2>&1; then
     git -C "$WORKSPACE" remote set-url upstream "$upstream_url"
@@ -146,7 +134,6 @@ main() {
 
   ensure_profile
   ensure_github_auth
-  validate_ssh_if_selected
 
   local fork
   fork="$(ensure_fork | tail -n 1)"
