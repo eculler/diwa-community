@@ -10,10 +10,11 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/eculler/community-site-dev:latest
+      image: ghcr.io/${{ github.repository_owner }}/community-site-dev:latest
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
+      options: --user 0
     permissions:
       contents: write
     steps:

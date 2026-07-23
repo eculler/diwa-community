@@ -6,8 +6,9 @@ channels:
 dependencies:
   - python=3.12
 
-  # GitHub CLI
+  # GitHub tooling
   - gh
+  - jupyterlab-git
 
   # In-browser quarto editing
   - jupyter-server-proxy
