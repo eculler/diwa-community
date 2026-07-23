@@ -46,34 +46,6 @@ ensure_github_auth() {
   github_authenticated || fail "GitHub authentication did not complete successfully."
 }
 
-repair_private_key_permissions() {
-  say "Step 3: Validate SSH private-key permissions"
-  local ssh_dir="$HOME/.ssh"
-  local pub private mode repaired=0
-
-  if [[ ! -d "$ssh_dir" ]]; then
-    echo "No ~/.ssh directory exists; nothing to validate."
-    return
-  fi
-
-  chmod 700 "$ssh_dir"
-
-  while IFS= read -r -d '' pub; do
-    private="${pub%.pub}"
-    [[ -f "$private" ]] || continue
-    mode="$(stat -c '%a' "$private")"
-    if [[ "$mode" != "600" ]]; then
-      echo "Restricting $private from $mode to 600."
-      chmod 600 "$private"
-      repaired=1
-    fi
-  done < <(find "$ssh_dir" -maxdepth 1 -type f -name '*.pub' -print0)
-
-  if [[ "$repaired" -eq 0 ]]; then
-    echo "Existing SSH private keys already have mode 600, or no paired private keys were found."
-  fi
-}
-
 selected_git_protocol() {
   gh config get git_protocol --host github.com 2>/dev/null || printf 'https\n'
 }
@@ -81,7 +53,7 @@ selected_git_protocol() {
 validate_ssh_if_selected() {
   local protocol
   protocol="$(selected_git_protocol)"
-  say "Step 4: Validate the selected Git protocol ($protocol)"
+  say "Step 3: Validate the selected Git protocol ($protocol)"
 
   if [[ "$protocol" != "ssh" ]]; then
     echo "HTTPS is selected; SSH connectivity testing is not required."
@@ -99,7 +71,7 @@ validate_ssh_if_selected() {
 }
 
 ensure_fork() {
-  say "Step 5: Find or create your fork"
+  say "Step 4: Find or create your fork"
   local login fork
   login="$(gh api user --jq .login)"
   fork="$login/community"
@@ -116,7 +88,7 @@ ensure_fork() {
 
 ensure_clone() {
   local fork="$1"
-  say "Step 6: Clone or validate the DIWA Community Site repository"
+  say "Step 5: Clone or validate the DIWA Community Site repository"
 
   if git -C "$WORKSPACE" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
     echo "Repository already exists at $WORKSPACE."
@@ -142,7 +114,7 @@ ensure_remotes() {
     upstream_url="https://github.com/${UPSTREAM_REPO}.git"
   fi
 
-  say "Step 7: Validate Git remotes"
+  say "Step 6: Validate Git remotes"
   git -C "$WORKSPACE" remote set-url origin "$origin_url"
   if git -C "$WORKSPACE" remote get-url upstream >/dev/null 2>&1; then
     git -C "$WORKSPACE" remote set-url upstream "$upstream_url"
@@ -174,7 +146,6 @@ main() {
 
   ensure_profile
   ensure_github_auth
-  repair_private_key_permissions
   validate_ssh_if_selected
 
   local fork
