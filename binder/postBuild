@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+# Bash debugging settings
+set -euxo pipefail
+
+######################
+### Install Quarto ###
+######################
 
 QUARTO_VERSION="1.7.34"
-
 INSTALL_PREFIX="${CONDA_DIR:-/srv/conda}"
 QUARTO_DIR="${INSTALL_PREFIX}/opt/quarto-${QUARTO_VERSION}"
 QUARTO_ARCHIVE="/tmp/quarto.tar.gz"
@@ -34,5 +38,12 @@ ln -sfn \
 # Clean up
 rm -f "${QUARTO_ARCHIVE}"
 
-# Do not require a password for VSCode
-export CODE_DISABLE_PASSWORD=true
+#########################
+### Configure Jupyter ###
+#########################
+
+JUPYTER_ENV_CONFIG="${CONDA_DIR}/envs/notebook/etc/jupyter"
+
+mkdir -p "$JUPYTER_ENV_CONFIG"
+cp binder/jupyter_server_config.py \
+  "$JUPYTER_ENV_CONFIG/jupyter_server_config.py"
