@@ -33,3 +33,6 @@ ln -sfn \
 
 # Clean up
 rm -f "${QUARTO_ARCHIVE}"
+
+# Do not require a password for VSCode
+export CODE_DISABLE_PASSWORD=true
