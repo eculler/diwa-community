@@ -4,16 +4,11 @@ from pathlib import Path
 
 
 def repair_ssh_private_key_permissions() -> None:
-    """Repair mounted SSH key permissions without blocking Jupyter startup."""
+    """Repair mounted SSH private-key permissions without blocking startup."""
     ssh_dir = Path.home() / ".ssh"
 
     if not ssh_dir.is_dir():
         return
-
-    try:
-        ssh_dir.chmod(0o700)
-    except OSError as exc:
-        print(f"Warning: could not set permissions on {ssh_dir}: {exc}")
 
     for public_key in ssh_dir.glob("*.pub"):
         private_key = public_key.with_suffix("")
