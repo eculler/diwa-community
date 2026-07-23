@@ -1,5 +1,39 @@
 import os
+import stat
 from pathlib import Path
+
+
+def repair_ssh_private_key_permissions() -> None:
+    """Repair mounted SSH key permissions without blocking Jupyter startup."""
+    ssh_dir = Path.home() / ".ssh"
+
+    if not ssh_dir.is_dir():
+        return
+
+    try:
+        ssh_dir.chmod(0o700)
+    except OSError as exc:
+        print(f"Warning: could not set permissions on {ssh_dir}: {exc}")
+
+    for public_key in ssh_dir.glob("*.pub"):
+        private_key = public_key.with_suffix("")
+
+        if not private_key.is_file():
+            continue
+
+        try:
+            current_mode = stat.S_IMODE(private_key.stat().st_mode)
+            if current_mode != 0o600:
+                private_key.chmod(0o600)
+                print(
+                    "Corrected SSH private-key permissions: "
+                    f"{private_key} {current_mode:o} -> 600"
+                )
+        except OSError as exc:
+            print(f"Warning: could not correct {private_key}: {exc}")
+
+
+repair_ssh_private_key_permissions()
 
 workspace = Path.home() / "diwa-community"
 
