@@ -26,6 +26,8 @@ rm -f "${QUARTO_ARCHIVE}"
 ############################
 
 install -m 0755 binder/diwa-community-site-setup.sh "${INSTALL_PREFIX}/bin/diwa-community-site-setup"
+install -m 0644 binder/diwa-community-site-ui.sh "${INSTALL_PREFIX}/bin/diwa-community-site-ui.sh"
+install -m 0644 binder/diwa-community-site-github.sh "${INSTALL_PREFIX}/bin/diwa-community-site-github.sh"
 install -m 0755 binder/open-diwa-community-site-editor.sh "${INSTALL_PREFIX}/bin/open-diwa-community-site-editor"
 
 #########################
