@@ -36,10 +36,11 @@ os.environ.setdefault("CODE_DISABLE_PASSWORD", "true")
 os.environ["CODE_WORKING_DIRECTORY"] = str(workspace)
 
 setup_command = r'''
-diwa-community-site-setup
-status=$?
-printf '\nSetup process exited with status %s.\n' "$status"
-printf 'Review the output above. Close this tab when finished.\n\n'
+if diwa-community-site-setup; then
+    printf '\nSetup complete. You can close this tab.\n\n'
+else
+    printf '\nReview the errors above. Close this tab when finished.\n\n'
+fi
 exec bash
 '''
 
