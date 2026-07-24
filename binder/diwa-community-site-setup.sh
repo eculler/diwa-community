@@ -9,6 +9,7 @@ BASHRC="$HOME/.bashrc"
 STATE_DIR="$HOME/.config/diwa-community-site"
 STATE_FILE="$STATE_DIR/setup-state.json"
 FORK=""
+SPINNER_OUTPUT=""
 
 if [[ -t 1 ]] && [[ "${TERM:-}" != "dumb" ]]; then
   BOLD=$'\033[1m'
@@ -17,6 +18,7 @@ if [[ -t 1 ]] && [[ "${TERM:-}" != "dumb" ]]; then
   RED=$'\033[31m'
   CYAN=$'\033[36m'
   RESET=$'\033[0m'
+  INTERACTIVE_OUTPUT=true
 else
   BOLD=""
   GREEN=""
@@ -24,6 +26,7 @@ else
   RED=""
   CYAN=""
   RESET=""
+  INTERACTIVE_OUTPUT=false
 fi
 
 heading() {
@@ -33,7 +36,6 @@ heading() {
 }
 
 info() { printf 'ℹ  %s\n' "$*"; }
-checking() { printf '→ %s\n' "$*"; }
 success() { printf '%s✓%s %s\n' "$GREEN" "$RESET" "$*"; }
 warning() { printf '%s!%s %s%s%s\n' "$YELLOW" "$RESET" "$BOLD" "$*" "$RESET" >&2; }
 prompt_note() { printf '%s?%s %s%s%s\n' "$GREEN" "$RESET" "$BOLD" "$*" "$RESET"; }
@@ -44,10 +46,56 @@ fail() {
   exit 1
 }
 
+run_with_spinner() {
+  local message="$1"
+  shift
+
+  local output_file pid frame_index=0 status
+  local -a frames=('⠋' '⠙' '⠹' '⠸' '⠼' '⠴' '⠦' '⠧' '⠇' '⠏')
+  output_file="$(mktemp)"
+
+  if [[ "$INTERACTIVE_OUTPUT" != true ]]; then
+    printf '→ %s\n' "$message"
+    if "$@" >"$output_file" 2>&1; then
+      SPINNER_OUTPUT="$(cat "$output_file")"
+      rm -f "$output_file"
+      return 0
+    fi
+    status=$?
+    cat "$output_file" >&2
+    rm -f "$output_file"
+    return "$status"
+  fi
+
+  "$@" >"$output_file" 2>&1 &
+  pid=$!
+
+  while kill -0 "$pid" 2>/dev/null; do
+    printf '\r%s%s%s %s' "$CYAN" "${frames[$frame_index]}" "$RESET" "$message"
+    frame_index=$(( (frame_index + 1) % ${#frames[@]} ))
+    sleep 0.08
+  done
+
+  if wait "$pid"; then
+    status=0
+  else
+    status=$?
+  fi
+
+  printf '\r\033[2K'
+  SPINNER_OUTPUT="$(cat "$output_file")"
+  rm -f "$output_file"
+
+  if (( status != 0 )); then
+    [[ -z "$SPINNER_OUTPUT" ]] || printf '%s\n' "$SPINNER_OUTPUT" >&2
+  fi
+
+  return "$status"
+}
+
 ensure_profile() {
   heading 1 "Configure the shell"
   info "JupyterLab terminals use your shell profile. This step makes sure interactive terminals load your normal Bash configuration."
-  checking "Checking $PROFILE..."
 
   touch "$BASHRC"
   if [[ ! -f "$PROFILE" ]] || ! grep -Fq '# DIWA Community Site Editor profile' "$PROFILE"; then
@@ -72,9 +120,9 @@ ensure_github_auth() {
   local login
   heading 2 "Connect to GitHub"
   info "The editor needs GitHub access so it can find your fork and synchronize your work."
-  checking "Checking the active GitHub CLI login..."
 
-  if login="$(active_github_login)"; then
+  if run_with_spinner "Checking the active GitHub CLI login..." active_github_login; then
+    login="$SPINNER_OUTPUT"
     success "Authenticated with GitHub as ${BOLD}${login}${RESET}."
     return
   fi
@@ -85,11 +133,12 @@ ensure_github_auth() {
   echo
   gh auth login --hostname github.com --web
 
-  if ! login="$(active_github_login)"; then
+  if ! run_with_spinner "Verifying the new GitHub login..." active_github_login; then
     gh auth status --active --hostname github.com || true
     fail "GitHub sign-in finished, but the active account still cannot access the GitHub API."
   fi
 
+  login="$SPINNER_OUTPUT"
   success "Authenticated with GitHub as ${BOLD}${login}${RESET}."
 }
 
@@ -104,14 +153,14 @@ ensure_fork() {
 
   login="$(active_github_login)" || fail "The active GitHub account could not be identified."
   FORK="$login/community"
-  checking "Looking for ${BOLD}${FORK}${RESET}..."
 
-  if gh repo view "$FORK" >/dev/null 2>&1; then
+  if run_with_spinner "Looking for ${BOLD}${FORK}${RESET}..." gh repo view "$FORK"; then
     success "Found your existing fork: ${BOLD}${FORK}${RESET}."
   else
     warning "No fork was found for this account."
-    checking "Creating a fork of ${BOLD}${UPSTREAM_REPO}${RESET}..."
-    gh repo fork "$UPSTREAM_REPO" --clone=false --remote=false
+    if ! run_with_spinner "Creating a fork of ${BOLD}${UPSTREAM_REPO}${RESET}..." gh repo fork "$UPSTREAM_REPO" --clone=false --remote=false; then
+      fail "GitHub could not create your fork. Review the error above, then rerun setup."
+    fi
     success "Created your fork: ${BOLD}${FORK}${RESET}."
   fi
 }
@@ -124,8 +173,7 @@ ensure_clone() {
 
   if git -C "$WORKSPACE" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
     success "Found the local repository at ${BOLD}${WORKSPACE}${RESET}."
-    checking "Pulling the latest changes and verifying GitHub access..."
-    if ! git -C "$WORKSPACE" pull --ff-only; then
+    if ! run_with_spinner "Pulling the latest changes and verifying GitHub access..." git -C "$WORKSPACE" pull --ff-only; then
       warning "The local repository could not be updated."
       fail "GitHub or SSH access may be broken, the remote may have changed, or local history may prevent a fast-forward pull. Run 'diwa-community-site-unsetup' for a guided reset, or repair the repository and rerun setup."
     fi
@@ -136,8 +184,7 @@ ensure_clone() {
   [[ ! -e "$WORKSPACE" ]] || fail "$WORKSPACE exists but is not a Git repository. Move or remove it, or run 'diwa-community-site-unsetup', then rerun setup."
 
   protocol="$(selected_git_protocol)"
-  checking "Cloning ${BOLD}${fork}${RESET} into ${BOLD}${WORKSPACE}${RESET} using ${BOLD}${protocol}${RESET}..."
-  if ! gh repo clone "$fork" "$WORKSPACE"; then
+  if ! run_with_spinner "Cloning ${BOLD}${fork}${RESET} into ${BOLD}${WORKSPACE}${RESET} using ${BOLD}${protocol}${RESET}..." gh repo clone "$fork" "$WORKSPACE"; then
     if [[ "$protocol" == "ssh" ]]; then
       warning "GitHub API authentication can remain valid even when an SSH key is missing."
       fail "The repository could not be cloned over SSH. Run 'diwa-community-site-unsetup' for a guided reset, verify SSH with 'ssh -T git@github.com', or switch to HTTPS with 'gh config set git_protocol https --host github.com'."
@@ -146,6 +193,18 @@ ensure_clone() {
     fail "The repository could not be cloned over HTTPS. Run 'diwa-community-site-unsetup' for a guided reset or inspect 'gh auth status --active --hostname github.com'."
   fi
   success "Cloned the repository successfully."
+}
+
+configure_remotes() {
+  local origin_url="$1"
+  local upstream_url="$2"
+
+  git -C "$WORKSPACE" remote set-url origin "$origin_url"
+  if git -C "$WORKSPACE" remote get-url upstream >/dev/null 2>&1; then
+    git -C "$WORKSPACE" remote set-url upstream "$upstream_url"
+  else
+    git -C "$WORKSPACE" remote add upstream "$upstream_url"
+  fi
 }
 
 ensure_remotes() {
@@ -164,12 +223,8 @@ ensure_remotes() {
     upstream_url="https://github.com/${UPSTREAM_REPO}.git"
   fi
 
-  checking "Setting origin and upstream using ${BOLD}${protocol}${RESET}..."
-  git -C "$WORKSPACE" remote set-url origin "$origin_url"
-  if git -C "$WORKSPACE" remote get-url upstream >/dev/null 2>&1; then
-    git -C "$WORKSPACE" remote set-url upstream "$upstream_url"
-  else
-    git -C "$WORKSPACE" remote add upstream "$upstream_url"
+  if ! run_with_spinner "Setting origin and upstream using ${BOLD}${protocol}${RESET}..." configure_remotes "$origin_url" "$upstream_url"; then
+    fail "Git remotes could not be configured. Review the error above, then rerun setup."
   fi
 
   success "Git remotes are configured."
