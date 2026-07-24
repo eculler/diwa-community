@@ -1,19 +1,27 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+# shellcheck source=diwa-community-site-ui.sh
+source "$SCRIPT_DIR/diwa-community-site-ui.sh"
+# shellcheck source=diwa-community-site-github.sh
+source "$SCRIPT_DIR/diwa-community-site-github.sh"
+
 DISPLAY_NAME="DIWA Community Site Editor"
 UPSTREAM_REPO="DigitalWaters-fi/community"
+FORK_NAME="community"
 WORKSPACE="$HOME/diwa-community"
 PROFILE="$HOME/.bash_profile"
 BASHRC="$HOME/.bashrc"
 STATE_DIR="$HOME/.config/diwa-community-site"
 STATE_FILE="$STATE_DIR/setup-state.json"
-
-say() { printf '\n%s\n' "$*"; }
-fail() { printf '\nERROR: %s\n' "$*" >&2; exit 1; }
+RESET_COMMAND="diwa-community-site-unsetup"
+TOTAL_STEPS=5
 
 ensure_profile() {
-  say "Step 1: Configure the shell profile"
+  ui_step 1 "$TOTAL_STEPS" "Configure the shell"
+  ui_info "JupyterLab terminals use your shell profile. This step makes sure interactive terminals load your normal Bash configuration."
+
   touch "$BASHRC"
   if [[ ! -f "$PROFILE" ]] || ! grep -Fq '# DIWA Community Site Editor profile' "$PROFILE"; then
     cat >> "$PROFILE" <<'EOF'
@@ -23,94 +31,10 @@ if [ -f "$HOME/.bashrc" ]; then
     . "$HOME/.bashrc"
 fi
 EOF
-    echo "Updated $PROFILE."
+    ui_success "Updated $PROFILE to load $BASHRC."
   else
-    echo "Profile configuration is already present."
+    ui_success "Shell profile is already configured."
   fi
-}
-
-github_authenticated() {
-  gh auth status --hostname github.com >/dev/null 2>&1
-}
-
-ensure_github_auth() {
-  say "Step 2: Sign in to GitHub"
-  if github_authenticated; then
-    gh auth status --hostname github.com
-    return
-  fi
-
-  echo "GitHub CLI will open a browser-based sign-in flow."
-  echo "Choose HTTPS or SSH when prompted; either is supported."
-  gh auth login --hostname github.com --web
-  github_authenticated || fail "GitHub authentication did not complete successfully."
-}
-
-selected_git_protocol() {
-  gh config get git_protocol --host github.com 2>/dev/null || printf 'https\n'
-}
-
-ensure_fork() {
-  say "Step 3: Find or create your fork"
-  local login fork
-  login="$(gh api user --jq .login)"
-  fork="$login/community"
-
-  if gh repo view "$fork" >/dev/null 2>&1; then
-    echo "Found fork: $fork"
-  else
-    echo "Creating fork of $UPSTREAM_REPO..."
-    gh repo fork "$UPSTREAM_REPO" --clone=false --remote=false
-  fi
-
-  printf '%s\n' "$fork"
-}
-
-ensure_clone() {
-  local fork="$1"
-  local protocol
-  say "Step 4: Clone or validate the DIWA Community Site repository"
-
-  if git -C "$WORKSPACE" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-    echo "Repository already exists at $WORKSPACE."
-    return
-  fi
-
-  [[ ! -e "$WORKSPACE" ]] || fail "$WORKSPACE exists but is not a Git repository. Move or remove it, then rerun setup."
-
-  protocol="$(selected_git_protocol)"
-  echo "Cloning $fork into $WORKSPACE using $protocol..."
-  if ! gh repo clone "$fork" "$WORKSPACE"; then
-    if [[ "$protocol" == "ssh" ]]; then
-      fail "The repository could not be cloned over SSH. Check the SSH error above, then verify the key with 'ssh -T git@github.com' or switch GitHub CLI to HTTPS with 'gh config set git_protocol https --host github.com'."
-    fi
-
-    fail "The repository could not be cloned over HTTPS. Check the Git error above and rerun 'gh auth status --hostname github.com'."
-  fi
-}
-
-ensure_remotes() {
-  local fork="$1"
-  local protocol upstream_url origin_url
-  protocol="$(selected_git_protocol)"
-
-  if [[ "$protocol" == "ssh" ]]; then
-    origin_url="git@github.com:${fork}.git"
-    upstream_url="git@github.com:${UPSTREAM_REPO}.git"
-  else
-    origin_url="https://github.com/${fork}.git"
-    upstream_url="https://github.com/${UPSTREAM_REPO}.git"
-  fi
-
-  say "Step 5: Validate Git remotes"
-  git -C "$WORKSPACE" remote set-url origin "$origin_url"
-  if git -C "$WORKSPACE" remote get-url upstream >/dev/null 2>&1; then
-    git -C "$WORKSPACE" remote set-url upstream "$upstream_url"
-  else
-    git -C "$WORKSPACE" remote add upstream "$upstream_url"
-  fi
-
-  git -C "$WORKSPACE" remote -v
 }
 
 write_state() {
@@ -119,31 +43,53 @@ write_state() {
 {
   "version": 1,
   "display_name": "$DISPLAY_NAME",
+  "upstream_repository": "$UPSTREAM_REPO",
+  "fork_repository": "$GITHUB_FORK",
   "workspace": "$WORKSPACE",
   "complete": true
 }
 EOF
 }
 
-main() {
-  command -v gh >/dev/null 2>&1 || fail "GitHub CLI is not installed."
-  command -v git >/dev/null 2>&1 || fail "Git is not installed."
+print_summary() {
+  ui_title "Setup summary"
+  ui_success "Shell configured"
+  ui_success "GitHub connected as ${UI_BOLD}${GITHUB_LOGIN}${UI_RESET}"
+  ui_success "Fork ready: ${UI_BOLD}${GITHUB_FORK}${UI_RESET}"
+  ui_success "Repository synchronized"
+  ui_success "Git remotes configured"
 
-  say "$DISPLAY_NAME setup"
-  echo "This workflow checks the current environment and resumes at each incomplete step."
+  printf '\n%s%s🎉 You’re all set!%s\n\n' "$UI_BOLD" "$UI_GREEN" "$UI_RESET"
+  ui_important "Open 'Open DIWA Community Site Editor' from the JupyterLab launcher."
+  printf 'Workspace: %s\n' "$WORKSPACE"
+}
+
+main() {
+  github_require_tools
+
+  ui_title "$DISPLAY_NAME setup"
+  ui_info "Setup checks the current environment and only performs actions that are needed."
 
   ensure_profile
-  ensure_github_auth
 
-  local fork
-  fork="$(ensure_fork | tail -n 1)"
-  ensure_clone "$fork"
-  ensure_remotes "$fork"
+  ui_step 2 "$TOTAL_STEPS" "Connect to GitHub"
+  ui_info "The editor needs GitHub access so it can find your fork and synchronize your work."
+  github_ensure_auth
+
+  ui_step 3 "$TOTAL_STEPS" "Find your GitHub fork"
+  ui_info "Your fork is your personal copy of the DIWA Community Site. It lets you edit safely without changing the main project directly."
+  github_ensure_fork "$UPSTREAM_REPO" "$FORK_NAME"
+
+  ui_step 4 "$TOTAL_STEPS" "Synchronize the site files"
+  ui_info "The editor works from a local Git repository. Existing files are updated; otherwise, your fork is cloned into the workspace."
+  github_sync_clone "$GITHUB_FORK" "$WORKSPACE" "$RESET_COMMAND"
+
+  ui_step 5 "$TOTAL_STEPS" "Configure Git remotes"
+  ui_info "The origin remote points to your fork, while upstream points to the main DIWA Community Site repository."
+  github_configure_remotes "$GITHUB_FORK" "$UPSTREAM_REPO" "$WORKSPACE"
+
   write_state
-
-  say "Setup complete"
-  echo "Open 'Open DIWA Community Site Editor' from the JupyterLab launcher."
-  echo "Workspace: $WORKSPACE"
+  print_summary
 }
 
 main "$@"
