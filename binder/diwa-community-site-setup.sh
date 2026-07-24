@@ -244,6 +244,19 @@ write_state() {
 EOF
 }
 
+print_summary() {
+  printf '\n%s%sSetup summary%s\n\n' "$BOLD" "$CYAN" "$RESET"
+  success "Shell configured"
+  success "GitHub connected"
+  success "Fork ready"
+  success "Repository synchronized"
+  success "Git remotes configured"
+
+  printf '\n%s%s🎉 You’re all set!%s\n\n' "$BOLD" "$GREEN" "$RESET"
+  important "Open 'Open DIWA Community Site Editor' from the JupyterLab launcher."
+  printf 'Workspace: %s\n' "$WORKSPACE"
+}
+
 main() {
   command -v gh >/dev/null 2>&1 || fail "GitHub CLI is not installed."
   command -v git >/dev/null 2>&1 || fail "Git is not installed."
@@ -257,10 +270,7 @@ main() {
   ensure_clone "$FORK"
   ensure_remotes "$FORK"
   write_state
-
-  printf '\n%s%s✓ Setup complete%s\n\n' "$BOLD" "$GREEN" "$RESET"
-  important "Open 'Open DIWA Community Site Editor' from the JupyterLab launcher."
-  printf 'Workspace: %s\n' "$WORKSPACE"
+  print_summary
 }
 
 main "$@"
