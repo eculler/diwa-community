@@ -2,8 +2,8 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
-source "$SCRIPT_DIR/diwa-community-site-ui.sh"
-source "$SCRIPT_DIR/diwa-community-site-github.sh"
+source "$SCRIPT_DIR/shell-ui-utils.sh"
+source "$SCRIPT_DIR/github-utils.sh"
 # shellcheck source=github-site-publish.sh
 source "$SCRIPT_DIR/github-site-publish.sh"
 
