@@ -28,12 +28,40 @@ def repair_ssh_private_key_permissions() -> None:
             print(f"Warning: could not correct {private_key}: {exc}")
 
 
-repair_ssh_private_key_permissions()
+def configure_code_working_directory() -> None:
+    """Set code-server's initial folder from persistent setup state."""
+    if os.environ.get("CODE_WORKING_DIRECTORY"):
+        return
 
-workspace = Path.home() / "diwa-community"
+    home = Path.home()
+    workspace_path_file = home / ".config" / "diwa-community-site" / "workspace-path"
+    workspace = home
+
+    try:
+        if workspace_path_file.is_file():
+            configured_path = workspace_path_file.read_text(encoding="utf-8").strip()
+            candidate = Path(configured_path).expanduser()
+
+            if configured_path and candidate.is_dir():
+                workspace = candidate
+            elif configured_path:
+                print(
+                    "Warning: configured DIWA Community Site workspace does not exist: "
+                    f"{candidate}. Using {home} instead."
+                )
+    except OSError as exc:
+        print(
+            "Warning: could not read the DIWA Community Site workspace setting: "
+            f"{exc}. Using {home} instead."
+        )
+
+    os.environ["CODE_WORKING_DIRECTORY"] = str(workspace)
+
+
+repair_ssh_private_key_permissions()
+configure_code_working_directory()
 
 os.environ.setdefault("CODE_DISABLE_PASSWORD", "true")
-os.environ["CODE_WORKING_DIRECTORY"] = str(workspace)
 
 setup_command = r'''
 if diwa-community-site-setup; then
