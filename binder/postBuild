@@ -21,9 +21,9 @@ tar --extract --gzip --file "${QUARTO_ARCHIVE}" --directory "${QUARTO_DIR}" --st
 ln -sfn "${QUARTO_DIR}/bin/quarto" "${INSTALL_PREFIX}/bin/quarto"
 rm -f "${QUARTO_ARCHIVE}"
 
-######################################
+##############################################
 ### Install VS Code/code-server extensions ###
-######################################
+##############################################
 
 echo "Installing Quarto VS Code extension..."
 code-server --install-extension quarto.quarto
@@ -33,9 +33,9 @@ code-server --install-extension quarto.quarto
 ############################
 
 install -m 0755 binder/diwa-community-site-setup.sh "${INSTALL_PREFIX}/bin/diwa-community-site-setup"
-install -m 0644 binder/diwa-community-site-ui.sh "${INSTALL_PREFIX}/bin/shell-ui-utils.sh"
-install -m 0644 binder/diwa-community-site-github.sh "${INSTALL_PREFIX}/bin/github-utils.sh"
-install -m 0755 binder/open-diwa-community-site-editor.sh "${INSTALL_PREFIX}/bin/open-diwa-community-site-editor"
+install -m 0644 binder/shell-ui-utils.sh "${INSTALL_PREFIX}/bin/shell-ui-utils.sh"
+install -m 0644 binder/github-utils.sh "${INSTALL_PREFIX}/bin/github-utils.sh"
+install -m 0644 binder/github-site-publish.sh "${INSTALL_PREFIX}/bin/github-site-publish.sh"
 
 #########################
 ### Configure Jupyter ###
