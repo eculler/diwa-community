@@ -2,9 +2,7 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
-# shellcheck source=diwa-community-site-ui.sh
 source "$SCRIPT_DIR/diwa-community-site-ui.sh"
-# shellcheck source=diwa-community-site-github.sh
 source "$SCRIPT_DIR/diwa-community-site-github.sh"
 # shellcheck source=github-site-publish.sh
 source "$SCRIPT_DIR/github-site-publish.sh"
@@ -23,7 +21,6 @@ TOTAL_STEPS=6
 ensure_profile() {
   ui_step 1 "$TOTAL_STEPS" "Configure the shell"
   ui_info "JupyterLab terminals use your shell profile. This step makes sure interactive terminals load your normal Bash configuration."
-
   touch "$BASHRC"
   if [[ ! -f "$PROFILE" ]] || ! grep -Fq '# DIWA Community Site Editor profile' "$PROFILE"; then
     cat >> "$PROFILE" <<'EOF'

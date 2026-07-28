@@ -7,6 +7,7 @@ UI_ELAPSED=""
 
 if [[ -t 1 ]] && [[ "${TERM:-}" != "dumb" ]]; then
   UI_BOLD=$'\033[1m'
+  UI_ITALIC=$'\033[3m'
   UI_GREEN=$'\033[32m'
   UI_YELLOW=$'\033[33m'
   UI_RED=$'\033[31m'
@@ -15,6 +16,7 @@ if [[ -t 1 ]] && [[ "${TERM:-}" != "dumb" ]]; then
   UI_INTERACTIVE=true
 else
   UI_BOLD=""
+  UI_ITALIC=""
   UI_GREEN=""
   UI_YELLOW=""
   UI_RED=""
@@ -24,15 +26,15 @@ else
 fi
 
 ui_title() { printf '\n%s%s%s%s\n' "$UI_BOLD" "$UI_CYAN" "$*" "$UI_RESET"; }
-ui_step() { printf '\n%s%sStep %s of %s · %s%s\n\n' "$UI_BOLD" "$UI_CYAN" "$1" "$2" "$3" "$UI_RESET"; }
-ui_info() { printf 'ℹ  %s\n' "$*"; }
+ui_step() { printf '\n%s%sStep %s of %s · %s%s\n' "$UI_BOLD" "$UI_CYAN" "$1" "$2" "$3" "$UI_RESET"; }
+ui_info() { printf '%s→  %s%s%s\n\n' "$UI_ITALIC" "$*" "$UI_RESET"; }
 ui_success() { printf '%s✓%s %s\n' "$UI_GREEN" "$UI_RESET" "$*"; }
 ui_warning() { printf '%s!%s %s%s%s\n' "$UI_YELLOW" "$UI_RESET" "$UI_BOLD" "$*" "$UI_RESET" >&2; }
 ui_prompt() { printf '%s?%s %s%s%s\n' "$UI_GREEN" "$UI_RESET" "$UI_BOLD" "$*" "$UI_RESET"; }
 ui_important() { printf '%s%s%s\n' "$UI_BOLD" "$*" "$UI_RESET"; }
 
 ui_fail() {
-  printf '\n%s!%s %sERROR:%s %s%s%s\n' "$UI_RED" "$UI_RESET" "$UI_BOLD" "$UI_RESET" "$UI_BOLD" "$*" "$UI_RESET" >&2
+  printf '\n%s! ERROR:%s %s%s%s\n' "$UI_RED" "$UI_RESET" "$UI_BOLD" "$*" "$UI_RESET" >&2
   exit 1
 }
 
