@@ -115,6 +115,28 @@ github_set_origin_command() {
   fi
 }
 
+github_persist_workspace() {
+  local workspace="$1"
+  local config_dir="${HOME}/.config/diwa-community-site"
+  local path_file="${config_dir}/workspace-path"
+  local temp_file
+
+  mkdir -p "$config_dir" || ui_fail "The DIWA Community Site configuration directory could not be created."
+  temp_file="$(mktemp "${path_file}.XXXXXX")" || ui_fail "A temporary DIWA Community Site configuration file could not be created."
+
+  if ! printf '%s\n' "$workspace" >"$temp_file"; then
+    rm -f "$temp_file"
+    ui_fail "The DIWA Community Site workspace location could not be saved."
+  fi
+
+  if ! mv -f "$temp_file" "$path_file"; then
+    rm -f "$temp_file"
+    ui_fail "The DIWA Community Site workspace location could not be saved."
+  fi
+
+  ui_success "Saved the workspace location to ${UI_BOLD}${path_file}${UI_RESET}."
+}
+
 github_sync_clone() {
   local fork="$1"
   local workspace="$2"
@@ -139,6 +161,7 @@ github_sync_clone() {
       ui_fail "GitHub or SSH access may be broken, or local history may prevent a fast-forward pull. ${recovery}"
     fi
     ui_success "Local repository is up to date and GitHub access is working (${UI_ELAPSED})."
+    github_persist_workspace "$workspace"
     return
   fi
 
@@ -152,6 +175,7 @@ github_sync_clone() {
     ui_fail "The repository could not be cloned over HTTPS. Inspect 'gh auth status --active --hostname github.com', or ${recovery}"
   fi
   ui_success "Cloned the repository successfully (${UI_ELAPSED})."
+  github_persist_workspace "$workspace"
 }
 
 github_configure_remotes_command() {
