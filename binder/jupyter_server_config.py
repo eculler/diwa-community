@@ -92,20 +92,4 @@ c.ServerProxy.servers = {
             "new_browser_tab": False,
         },
     },
-    "diwa-community-site-editor": {
-        "command": [
-            "open-diwa-community-site-editor",
-            "--port",
-            "{port}",
-        ],
-        "timeout": 30,
-        "absolute_url": False,
-        "launcher_entry": {
-            "enabled": True,
-            "title": "Open DIWA Community Site Editor",
-            "category": "DIWA Community Site",
-            "icon_path": "",
-            "new_browser_tab": False,
-        },
-    },
 }
