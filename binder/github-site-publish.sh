@@ -63,26 +63,48 @@ github_pages_get_info_command() {
 github_pages_enable_command() {
   local fork="$1"
 
-  printf '%s\n' '{"build_type":"legacy","source":{"branch":"gh-pages","path":"/"}}' |
-    gh api \
-      --method POST \
-      -H "Accept: application/vnd.github+json" \
-      "repos/${fork}/pages" \
-      --input - \
-      --silent
+  gh api \
+    --method POST \
+    -H "Accept: application/vnd.github+json" \
+    "repos/${fork}/pages" \
+    -F build_type=legacy \
+    -F 'source[branch]=gh-pages' \
+    -F 'source[path]=/' \
+    --silent
 }
 
 
 github_pages_update_source_command() {
   local fork="$1"
 
-  printf '%s\n' '{"build_type":"legacy","source":{"branch":"gh-pages","path":"/"}}' |
-    gh api \
-      --method PUT \
-      -H "Accept: application/vnd.github+json" \
-      "repos/${fork}/pages" \
-      --input - \
-      --silent
+  gh api \
+    --method PUT \
+    -H "Accept: application/vnd.github+json" \
+    "repos/${fork}/pages" \
+    -F build_type=legacy \
+    -F 'source[branch]=gh-pages' \
+    -F 'source[path]=/' \
+    --silent
+}
+
+
+github_pages_wait_for_info_command() {
+  local fork="$1"
+  local attempts="${2:-10}"
+  local delay_seconds="${3:-2}"
+  local attempt
+
+  for ((attempt = 1; attempt <= attempts; attempt++)); do
+    if github_pages_get_info_command "$fork" 2>/dev/null; then
+      return 0
+    fi
+
+    if ((attempt < attempts)); then
+      sleep "$delay_seconds"
+    fi
+  done
+
+  return 1
 }
 
 
@@ -90,7 +112,9 @@ github_pages_capture_info() {
   local fork="$1"
   local branch path site_url
 
-  if ! ui_run "Confirming the GitHub Pages configuration..." github_pages_get_info_command "$fork"; then
+  if ! ui_run \
+    "Waiting for GitHub Pages to finish provisioning..." \
+    github_pages_wait_for_info_command "$fork"; then
     ui_fail "GitHub Pages was configured, but setup could not confirm the resulting site. Review the GitHub repository settings, then rerun setup."
   fi
 
