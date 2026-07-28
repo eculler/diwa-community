@@ -1,4 +1,6 @@
-# Bug Report Guidelines for VRE + Data Lake
+---
+title: "Bug Report Guidelines for VRE + Data Lake"
+---
 
 This page explains how to report bugs in the **VRE + Data Lake** platform to help the team track, prioritize, and fix issues efficiently.
 

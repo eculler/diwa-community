@@ -1,4 +1,6 @@
-# Persistent Conda Environment in Jupyter (Kubernetes / JupyterHub)
+---
+title: "Install Conda as Kernel"
+---
 
 This guide shows how to create a **persistent Conda environment** that survives **pod or server restarts**.
 

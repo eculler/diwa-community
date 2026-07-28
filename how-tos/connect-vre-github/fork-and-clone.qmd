@@ -1,4 +1,6 @@
-# Fork a GitHub repository and clone onto the VRE
+---
+title: "Fork a GitHub repository and clone onto the VRE"
+---
 
 ![](img/fork-and-clone/01-organizations.png)
 

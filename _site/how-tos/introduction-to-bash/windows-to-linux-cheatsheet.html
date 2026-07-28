@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Fork a GitHub repository and clone onto the VRE – Digital Waters Community Docs</title>
+<title>Windows → Linux Migration Cheat Sheet – Digital Waters Community Docs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -128,11 +128,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../how-tos/diwa-vre.html" aria-current="page"> 
+    <a class="nav-link" href="../../how-tos/diwa-vre.html"> 
 <span class="menu-text">DIWA VRE</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../how-tos/scientific-workflows.html"> 
+    <a class="nav-link active" href="../../how-tos/scientific-workflows.html" aria-current="page"> 
 <span class="menu-text">Scientific Workflows</span></a>
   </li>  
   <li class="nav-item">
@@ -150,7 +150,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../how-tos/connect-vre-github/fork-and-clone.html">Fork a GitHub repository and clone onto the VRE</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../how-tos/introduction-to-bash/windows-to-linux-cheatsheet.html">Windows → Linux Migration Cheat Sheet</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -164,38 +164,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../how-tos/diwa-vre.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">DIWA VRE</span></a>
+  <a href="../../how-tos/scientific-workflows.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Scientific Workflows</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../how-tos/diwa-datalab/introduction-vre.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Getting started on the DIWA DataLab</span></a>
+  <a href="../../how-tos/introduction-to-bash/bash-tutorial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bash for file management</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../how-tos/connect-vre-github/connect-vre-github.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Connect the DIWA VRE to GitHub</span></a>
+  <a href="../../how-tos/introduction-to-bash/windows-to-linux-cheatsheet.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Windows → Linux Migration Cheat Sheet</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../how-tos/connect-vre-github/fork-and-clone.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Fork a GitHub repository and clone onto the VRE</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../how-tos/sync-fork/sync-fork.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sync your fork on GitHub</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../how-tos/install-conda-as-kernel/Read.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Install Conda as Kernel</span></a>
+  <a href="../../how-tos/build-a-docker-image/run-repo2docker-vre.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Use <code>repo2docker</code> to jump-start reproducibility</span></a>
   </div>
 </li>
     </ul>
@@ -209,7 +197,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Fork a GitHub repository and clone onto the VRE</h1>
+<h1 class="title">Windows → Linux Migration Cheat Sheet</h1>
 </div>
 
 
@@ -226,58 +214,89 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><img src="img/fork-and-clone/01-organizations.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>Open the user menu in the upper right on GitHub, and navigate to your Organizations page</p>
-</blockquote>
-<p><img src="img/fork-and-clone/02-diwa-org.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>Select the <code>DigitalWaters-fi</code> organization</p>
-</blockquote>
-<p><img src="img/fork-and-clone/03-repositories.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>Navigate to the <code>Repositories</code> tab</p>
-</blockquote>
-<p><img src="img/fork-and-clone/04-waterdig-repo.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>Select the <code>WaterDig</code> repository</p>
-</blockquote>
-<p><img src="img/fork-and-clone/05-fork.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>Click the <code>Fork</code> button</p>
-</blockquote>
-<p><img src="img/fork-and-clone/06-confirm-fork.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>Confirm your fork. You do not need to make any changes.</p>
-</blockquote>
-<p><img src="img/fork-and-clone/07-check-fork.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>You should now be in <em>your</em> fork of the repository! You can check in the upper left that you are in <em>your</em> account and no longer in DigitalWaters-fi</p>
-</blockquote>
-<p><img src="img/fork-and-clone/11-launch.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>Navigate to the DIWA VRE and launch a WaterDigitalization image</p>
-</blockquote>
-<p><img src="img/fork-and-clone/12-copy-repo-url.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>Copy the url for <em>your</em> fork. Make sure to select the correct type of authentication (HTTPS or SSH) to match the way you configured your account on the VRE before copying!</p>
-</blockquote>
-<p><img src="img/fork-and-clone/13-clone.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>Open a Terminal window in the VRE and clone your repository with the <code>git clone &lt;url&gt;</code> command, replacing <code>&lt;url&gt;</code> with the url you copied.</p>
-</blockquote>
-<p><img src="img/fork-and-clone/14-modify-key-permissions.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>Oops! Looks like your SSH key has insufficient permissions, and GitHub won’t accept it as strong authentication! You’ll need to use the <code>chmod</code> command to change the permissions</p>
-</blockquote>
-<p>Use the following command to change the permissions:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> 600 ~/.ssh/id_ed25519</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><img src="img/fork-and-clone/15-clone-with-permissions.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>Now, you can try cloning again and it should go through (provided your SSH setup was correct). TIP – you can get that command back in the Terminal without needing to type it again by using the up arrow!</p>
-</blockquote>
+<section id="created-with-assistance-from-chatgpt4.1" class="level2">
+<h2 class="anchored" data-anchor-id="created-with-assistance-from-chatgpt4.1">Created with assistance from ChatGPT4.1</h2>
+<p>Search querry “create a cheat sheet in Markdown that covers Windows to Linux repository migration hygeine, cover things like line endings, ghost characters, encodings, permissions, and any other common pitfalls I’ve forgotten”</p>
+<p>When moving code or data from Windows to Linux, follow these steps to avoid common pitfalls:</p>
+</section>
+<section id="convert-line-endings" class="level2">
+<h2 class="anchored" data-anchor-id="convert-line-endings">1️⃣ Convert line endings</h2>
+<p>Windows uses CRLF (<code>\r\n</code>), Linux uses LF (<code>\n</code>).</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert a single file</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">dos2unix</span> filename.txt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert all .sh files in current directory</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> . <span class="at">-type</span> f <span class="at">-name</span> <span class="st">"*.sh"</span> <span class="at">-exec</span> dos2unix {} <span class="dt">\;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="remove-ghost-invisible-characters" class="level2">
+<h2 class="anchored" data-anchor-id="remove-ghost-invisible-characters">2️⃣ Remove ghost / invisible characters</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show non-printable characters</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="at">-v</span> filename.txt</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Show hex codes</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">hexdump</span> <span class="at">-C</span> filename.txt</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove BOM (Byte Order Mark)</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sed</span> <span class="at">-i</span> <span class="st">'1s/^\xEF\xBB\xBF//'</span> filename.txt</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Strip all non-ASCII characters</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">tr</span> <span class="at">-cd</span> <span class="st">'\11\12\15\40-\176'</span> <span class="op">&lt;</span> input.txt <span class="op">&gt;</span> output.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="check-filename-case" class="level2">
+<h2 class="anchored" data-anchor-id="check-filename-case">3️⃣ Check filename case</h2>
+<p>Linux is case-sensitive; Windows is not.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify capitalization matches your code references</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="fix-executable-permissions" class="level2">
+<h2 class="anchored" data-anchor-id="fix-executable-permissions">4️⃣ Fix executable permissions</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make scripts executable</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x script.sh</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Fix ownership if copied from another user</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">chown</span> <span class="at">-R</span> <span class="va">$USER</span>:<span class="va">$USER</span> folder/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="check-file-encoding" class="level2">
+<h2 class="anchored" data-anchor-id="check-file-encoding">5️⃣ Check file encoding</h2>
+<p>Linux prefers UTF-8; Windows may use UTF-16 or legacy codepages.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Detect file encoding</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">file</span> filename.txt</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to UTF-8</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">iconv</span> <span class="at">-f</span> UTF-16 <span class="at">-t</span> UTF-8 input.txt <span class="at">-o</span> output.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="check-for-hiddensystem-files" class="level2">
+<h2 class="anchored" data-anchor-id="check-for-hiddensystem-files">6️⃣ Check for hidden/system files</h2>
+<p>Linux treats files starting with <code>.</code> as hidden. Ensure important config files are copied.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="verify-scripts" class="level2">
+<h2 class="anchored" data-anchor-id="verify-scripts">7️⃣ Verify scripts</h2>
+<ul>
+<li>Use <code>bash -n script.sh</code> to check syntax without running</li>
+<li>Test scripts on Linux before full deployment</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> <span class="at">-n</span> script.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="check-installed-dependencies" class="level2">
+<h2 class="anchored" data-anchor-id="check-installed-dependencies">8️⃣ Check installed dependencies</h2>
+<ul>
+<li>Reinstall Python/Node packages or other dependencies for Linux</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-r</span> requirements.txt</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="quick-tips" class="level3">
+<h3 class="anchored" data-anchor-id="quick-tips">✅ Quick tips</h3>
+<ul>
+<li>Always use <strong>plain text editors</strong>: Vim, Nano, VS Code, or Linux-native editors</li>
+<li>Save files as <strong>UTF-8 without BOM</strong></li>
+<li>Run <strong><code>dos2unix</code> and encoding checks</strong> before executing scripts</li>
+<li>Verify <strong>case-sensitive filenames and permissions</strong></li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

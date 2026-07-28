@@ -1,0 +1,12 @@
+---
+title: "DIWA VRE"
+---
+
+# DIWA VRE
+
+This section covers key tasks for using the Digital Waters Virtual Research Environment.
+
+- [Getting started on the DIWA DataLab](diwa-datalab/introduction-vre.qmd)
+- [Connect the DIWA VRE to GitHub](connect-vre-github/connect-vre-github.qmd)
+- [Fork a GitHub repository and clone onto the VRE](connect-vre-github/fork-and-clone.qmd)
+- [Sync your fork on GitHub](sync-fork/sync-fork.qmd)

@@ -1,4 +1,7 @@
-# Bash for file management
+---
+title: "Bash for file management"
+---
+
 ## Objectives:
 In reproducible scientific computing, the goal is to permit someone to recreate our scientific workflows step by step. This tutorial will help you to build reproducible scientific workflows by teaching you to interact with your computer using text commands, instead of your mouse and graphical user interfaces. These text commands represent a record of what software was used, what operations were run, and on what data that is *automatable*, or capable of running without human interaction.
 
@@ -184,6 +187,3 @@ git clone https://github.com/veltman/clmystery    # clone, or copy, a git reposi
 cd clmystery                                      # move into the new cloned repository
 ls                                                # list everything in the currenet working directory
 cat instructions                                  # read the instructions file
-
-
-

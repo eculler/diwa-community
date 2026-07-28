@@ -1,0 +1,271 @@
+---
+title: "Install Packages in JupyterHub"
+---
+
+This guide explains how to create and activate Python environments and install packages in JupyterHub using Conda (Micromamba), Python venv, and pip.
+
+---
+
+## Prerequisites (Required Once for Conda)
+
+Before using `conda activate`, users must initialize their shell.
+
+Run the following commands once:
+
+```bash
+echo 'source /etc/profile.d/micromamba.sh' > ~/.bashrc
+source ~/.bashrc
+```
+
+This enables the `conda activate` command in JupyterHub terminals.
+
+If `conda activate` does not work, use the fallback:
+
+```bash
+source activate <env-name>
+```
+
+---
+
+## Conda Environments (Recommended)
+
+### Create a Simple Conda Environment (Default Python)
+
+Create an environment without specifying a Python version:
+
+```bash
+conda create -n simple-env
+```
+
+Activate:
+
+```bash
+conda activate simple-env
+```
+
+Fallback:
+
+```bash
+source activate simple-env
+```
+
+---
+
+### Create a Conda Environment with a Specific Python Version
+
+```bash
+conda create -n myenv python=3.10
+```
+
+Example with packages:
+
+```bash
+conda create -n data-env python=3.9 numpy pandas matplotlib
+```
+
+---
+
+### Activate a Conda Environment
+
+```bash
+conda activate myenv
+```
+
+Fallback:
+
+```bash
+source activate myenv
+```
+
+Verify activation:
+
+```bash
+which python
+python --version
+```
+
+---
+
+### Install Packages with Conda
+
+```bash
+conda install numpy
+conda install pandas scipy scikit-learn
+conda install -c conda-forge xarray
+```
+
+---
+
+## pip Installation (Conda or venv)
+
+Always activate your environment before using pip.
+
+```bash
+pip install requests
+pip install fastapi uvicorn
+pip install -r requirements.txt
+```
+
+Upgrade pip (recommended):
+
+```bash
+pip install --upgrade pip
+```
+
+---
+
+## Installing a Package System-Wide (Without an Environment)
+
+> **⚠️ Availability:** This installation method is only available on the **WaterDigitizationMethods** server image. It will not work on other server images.For other server images user Installing Packages Inside an Activated Environment described below.
+
+If you need to install a package outside of any environment (e.g., directly into your user space), use the `--user` flag:
+
+```bash
+pip install --user cookiecutter
+```
+
+This installs the package to your personal user directory (e.g., `~/.local/lib/`). You can verify the installed location with:
+
+```bash
+which cookiecutter
+# Example output: /home/jovyan/.local/bin/cookiecutter
+```
+
+> **Note:** Packages installed with `--user` are available globally to your user account but are **not** isolated inside any Conda or venv environment. Prefer installing inside an activated environment when possible.
+
+---
+
+## Installing Packages Inside an Activated Environment (No `--user` Needed)
+
+When an environment is **active**, `pip install` installs directly into that environment. The `--user` flag is **not needed** and should be omitted:
+
+```bash
+conda activate myenv
+pip install cookiecutter
+```
+
+Or with venv:
+
+```bash
+source py-env/bin/activate
+pip install cookiecutter
+```
+
+Verify the package is installed in the correct environment:
+
+```bash
+which cookiecutter
+# Should point inside your env, e.g.:
+# /home/jovyan/.conda/envs/myenv/bin/cookiecutter
+```
+
+> **Tip:** Always activate your environment first. Using `--user` inside an active environment can cause packages to be installed in the wrong location, leading to import errors.
+
+---
+
+## Python Virtual Environments (venv)
+
+Use venv if Conda is unavailable or not required.
+
+### Create a Python Virtual Environment
+
+```bash
+python -m venv py-env
+```
+
+Or specify Python version:
+
+```bash
+python3.10 -m venv py-env
+```
+
+---
+
+### Activate the Python Virtual Environment
+
+Linux / macOS (JupyterHub):
+
+```bash
+source py-env/bin/activate
+```
+
+Deactivate:
+
+```bash
+deactivate
+```
+
+---
+
+### Install Packages with pip (venv)
+
+```bash
+pip install numpy pandas matplotlib
+pip install -r requirements.txt
+```
+
+---
+
+## Example: Full Conda Workflow
+
+```bash
+echo 'source /etc/profile.d/micromamba.sh' > ~/.bashrc
+source ~/.bashrc
+conda create -n ml-env python=3.10
+conda activate ml-env
+conda install numpy pandas scikit-learn
+pip install xgboost
+```
+
+---
+
+## Example: Simple Conda Environment Workflow
+
+```bash
+conda create -n simple-env
+conda activate simple-env
+conda install numpy pandas
+```
+
+---
+
+## Example: Python venv Workflow
+
+```bash
+python -m venv py-env
+source py-env/bin/activate
+pip install numpy pandas matplotlib
+```
+
+---
+
+## Example: Installing cookiecutter
+
+**Option 1 — Inside an activated Conda environment (recommended):**
+
+```bash
+conda activate myenv
+pip install cookiecutter
+which cookiecutter
+# /home/jovyan/.conda/envs/myenv/bin/cookiecutter
+```
+
+**Option 2 — User-wide install (no environment required):**
+
+```bash
+pip install --user cookiecutter
+which cookiecutter
+# /home/jovyan/.local/bin/cookiecutter
+```
+
+---
+
+## Notes & Best Practices
+
+- Always activate an environment before installing packages
+- When an environment is active, use `pip install <package>` — **do not** add `--user`
+- Use `--user` only when installing outside any environment (system-wide user install)
+- Prefer Conda for scientific and data-science libraries
+- Use pip for packages not available in Conda
+- Do not install packages into the system Python
+- Do not mix packages across environments

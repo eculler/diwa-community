@@ -1,0 +1,13 @@
+---
+title: "Scientific Workflows"
+---
+
+# Scientific Workflows
+
+This section describes workflows and tools for reproducible scientific computing.
+
+- [Bash for file management](introduction-to-bash/bash-tutorial.qmd)
+- [Windows → Linux migration cheat sheet](introduction-to-bash/windows-to-linux-cheatsheet.qmd)
+- [Install Conda as a Jupyter kernel](install-conda-as-kernel/Read.qmd)
+- [Install packages in JupyterHub](install-packages-guides/README.qmd)
+- [Use `repo2docker` to jump-start reproducibility](build-a-docker-image/run-repo2docker-vre.qmd)

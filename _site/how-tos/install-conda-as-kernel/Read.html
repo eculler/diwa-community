@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Fork a GitHub repository and clone onto the VRE – Digital Waters Community Docs</title>
+<title>Install Conda as Kernel – Digital Waters Community Docs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -150,7 +150,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../how-tos/connect-vre-github/fork-and-clone.html">Fork a GitHub repository and clone onto the VRE</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../how-tos/install-conda-as-kernel/Read.html">Install Conda as Kernel</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -182,7 +182,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../how-tos/connect-vre-github/fork-and-clone.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../how-tos/connect-vre-github/fork-and-clone.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fork a GitHub repository and clone onto the VRE</span></a>
   </div>
 </li>
@@ -194,7 +194,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../how-tos/install-conda-as-kernel/Read.html" class="sidebar-item-text sidebar-link">
+  <a href="../../how-tos/install-conda-as-kernel/Read.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Install Conda as Kernel</span></a>
   </div>
 </li>
@@ -209,7 +209,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Fork a GitHub repository and clone onto the VRE</h1>
+<h1 class="title">Install Conda as Kernel</h1>
 </div>
 
 
@@ -226,58 +226,110 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><img src="img/fork-and-clone/01-organizations.png" class="img-fluid"></p>
+<p>This guide shows how to create a <strong>persistent Conda environment</strong> that survives <strong>pod or server restarts</strong>.</p>
 <blockquote class="blockquote">
-<p>Open the user menu in the upper right on GitHub, and navigate to your Organizations page</p>
+<p><strong>Before you start:</strong> decide on your own names for the two values marked below — then replace them consistently throughout every command.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Placeholder</th>
+<th>What it is</th>
+<th>Example values</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>&lt;ENV_NAME&gt;</code></td>
+<td>Folder name for your conda environment</td>
+<td><code>datascience</code>, <code>nlp-env</code>, <code>torch39</code></td>
+</tr>
+<tr class="even">
+<td><code>&lt;DISPLAY_NAME&gt;</code></td>
+<td>Label shown in Jupyter’s kernel picker</td>
+<td><code>Python (Data Science)</code>, <code>PyTorch 3.9</code></td>
+</tr>
+</tbody>
+</table>
+<p>Everything else (<code>/home/jovyan</code>, Python version) can also be changed to match your setup.</p>
 </blockquote>
-<p><img src="img/fork-and-clone/02-diwa-org.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>Select the <code>DigitalWaters-fi</code> organization</p>
-</blockquote>
-<p><img src="img/fork-and-clone/03-repositories.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>Navigate to the <code>Repositories</code> tab</p>
-</blockquote>
-<p><img src="img/fork-and-clone/04-waterdig-repo.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>Select the <code>WaterDig</code> repository</p>
-</blockquote>
-<p><img src="img/fork-and-clone/05-fork.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>Click the <code>Fork</code> button</p>
-</blockquote>
-<p><img src="img/fork-and-clone/06-confirm-fork.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>Confirm your fork. You do not need to make any changes.</p>
-</blockquote>
-<p><img src="img/fork-and-clone/07-check-fork.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>You should now be in <em>your</em> fork of the repository! You can check in the upper left that you are in <em>your</em> account and no longer in DigitalWaters-fi</p>
-</blockquote>
-<p><img src="img/fork-and-clone/11-launch.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>Navigate to the DIWA VRE and launch a WaterDigitalization image</p>
-</blockquote>
-<p><img src="img/fork-and-clone/12-copy-repo-url.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>Copy the url for <em>your</em> fork. Make sure to select the correct type of authentication (HTTPS or SSH) to match the way you configured your account on the VRE before copying!</p>
-</blockquote>
-<p><img src="img/fork-and-clone/13-clone.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>Open a Terminal window in the VRE and clone your repository with the <code>git clone &lt;url&gt;</code> command, replacing <code>&lt;url&gt;</code> with the url you copied.</p>
-</blockquote>
-<p><img src="img/fork-and-clone/14-modify-key-permissions.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>Oops! Looks like your SSH key has insufficient permissions, and GitHub won’t accept it as strong authentication! You’ll need to use the <code>chmod</code> command to change the permissions</p>
-</blockquote>
-<p>Use the following command to change the permissions:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> 600 ~/.ssh/id_ed25519</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><img src="img/fork-and-clone/15-clone-with-permissions.png" class="img-fluid"></p>
-<blockquote class="blockquote">
-<p>Now, you can try cloning again and it should go through (provided your SSH setup was correct). TIP – you can get that command back in the Terminal without needing to type it again by using the up arrow!</p>
-</blockquote>
+<hr>
+<section id="create-a-persistent-directory-for-conda-environments" class="level2">
+<h2 class="anchored" data-anchor-id="create-a-persistent-directory-for-conda-environments">1. Create a Persistent Directory for Conda Environments</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /home/jovyan/conda-envs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>conda-envs is folder name can be anything.</p>
+<p>All new environments will live here and <strong>persist across pod restarts</strong>. Run this once.</p>
+<hr>
+</section>
+<section id="create-the-environment" class="level2">
+<h2 class="anchored" data-anchor-id="create-the-environment">2. Create the Environment</h2>
+<p>Replace <code>&lt;ENV_NAME&gt;</code> with your chosen name and set the Python version you need:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-p</span> /home/jovyan/conda-envs/<span class="op">&lt;</span>ENV_NAME<span class="op">&gt;</span> python=3.10 <span class="at">-y</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The <code>-p</code> flag specifies the <strong>exact installation path</strong>, keeping the environment on the persistent volume.</p>
+<p>You can create multiple environments side by side — just use a different <code>&lt;ENV_NAME&gt;</code> each time:</p>
+<pre><code>/home/jovyan/conda-envs/datascience
+/home/jovyan/conda-envs/nlp-env
+/home/jovyan/conda-envs/torch39</code></pre>
+<hr>
+</section>
+<section id="activate-the-environment" class="level2">
+<h2 class="anchored" data-anchor-id="activate-the-environment">3. Activate the Environment</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> activate /home/jovyan/conda-envs/<span class="op">&lt;</span>ENV_NAME<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="install-ipykernel" class="level2">
+<h2 class="anchored" data-anchor-id="install-ipykernel">4. Install <code>ipykernel</code></h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install ipykernel <span class="at">-y</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This allows the environment to appear as a <strong>Jupyter kernel</strong>.</p>
+<hr>
+</section>
+<section id="register-as-a-jupyter-kernel-persistent" class="level2">
+<h2 class="anchored" data-anchor-id="register-as-a-jupyter-kernel-persistent">5. Register as a Jupyter Kernel (Persistent)</h2>
+<p>Replace both <code>&lt;ENV_NAME&gt;</code> and <code>&lt;DISPLAY_NAME&gt;</code>. The <code>--name</code> value must be a single word (no spaces); <code>--display-name</code> can be anything you like.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> ipykernel install <span class="dt">\</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">--prefix</span><span class="op">=</span>/home/jovyan/.local <span class="dt">\</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">--name</span> <span class="op">&lt;</span>ENV_NAME<span class="op">&gt;</span> <span class="dt">\</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">--display-name</span> <span class="st">"&lt;DISPLAY_NAME&gt;"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The kernel spec is saved at:</p>
+<pre><code>/home/jovyan/.local/share/jupyter/kernels/&lt;ENV_NAME&gt;</code></pre>
+<p>Because <code>/home/jovyan</code> is on a persistent volume, the kernel will <strong>survive server restarts</strong>.</p>
+<hr>
+</section>
+<section id="verify-installation" class="level2">
+<h2 class="anchored" data-anchor-id="verify-installation">6. Verify Installation</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> kernelspec list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Expected output:</p>
+<pre><code>Available kernels:
+  python3       /opt/conda/share/jupyter/kernels/python3
+  &lt;ENV_NAME&gt;    /home/jovyan/.local/share/jupyter/kernels/&lt;ENV_NAME&gt;</code></pre>
+<hr>
+</section>
+<section id="full-example" class="level2">
+<h2 class="anchored" data-anchor-id="full-example">Full Example</h2>
+<p>Using <code>ENV_NAME=datascience</code> and <code>DISPLAY_NAME=Python (Data Science)</code>:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /home/jovyan/conda-envs</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-p</span> /home/jovyan/conda-envs/datascience python=3.10 <span class="at">-y</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> activate /home/jovyan/conda-envs/datascience</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install ipykernel <span class="at">-y</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> ipykernel install <span class="dt">\</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">--prefix</span><span class="op">=</span>/home/jovyan/.local <span class="dt">\</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">--name</span> datascience <span class="dt">\</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">--display-name</span> <span class="st">"Python (Data Science)"</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> kernelspec list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+<p>✅ Your environment is now <strong>persistent and available as a Jupyter kernel</strong>.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
