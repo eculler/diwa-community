@@ -1,4 +1,6 @@
-# Install Packages
+---
+title: "Install Packages in JupyterHub"
+---
 
 This guide explains how to create and activate Python environments and install packages in JupyterHub using Conda (Micromamba), Python venv, and pip.
 

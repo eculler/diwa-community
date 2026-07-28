@@ -1,4 +1,6 @@
-# HOW-TO: Connect your account on the DIWA Virtual Research Environment (VRE) to GitHub
+---
+title: "Connect the DIWA VRE to GitHub"
+---
 
 Goals:
 

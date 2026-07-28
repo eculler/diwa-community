@@ -1,4 +1,7 @@
-# Windows → Linux Migration Cheat Sheet 
+---
+title: "Windows → Linux Migration Cheat Sheet"
+---
+
 ## Created with assistance from ChatGPT4.1
 Search querry "create a cheat sheet in Markdown that covers Windows to Linux repository migration hygeine, cover things like line endings, ghost characters, encodings, permissions, and any other common pitfalls I've forgotten"
 
@@ -93,4 +96,3 @@ npm install
 * Save files as **UTF-8 without BOM**
 * Run **`dos2unix` and encoding checks** before executing scripts
 * Verify **case-sensitive filenames and permissions**
-

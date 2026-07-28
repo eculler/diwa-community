@@ -1,4 +1,7 @@
-# Getting started on the DIWA DataLab
+---
+title: "Getting started on the DIWA DataLab"
+---
+
 The [Digital Waters](https://digitalwaters.fi) flagship and pilot, in collaboration with [CSC – Finnish Center for Informatics in Science](https://csc.fi) has developed a JupyterHub based virual reasearch environment to accelerate research, promote FAIR and Open Science best practices within the flagship, facilitate collaboration, and co-develop digital twin services. We're calling this service the [DIWA DataLab](https://diwa-data-lab-vre.rahtiapp.fi/hub/login?next=%2Fhub%2Fhome), and it is available to use for research and development.
 
 ## Why use the DIWA DataLab?
@@ -122,9 +125,4 @@ For full instructions on how to configure a connection to GitHub within your ser
 The DIWA DataLab is brand new and currently in development. If you notice any issues, errors, or bugs, [please report an issue here](https://github.com/DigitalWaters-fi/.github/issues). If you need additional storage, computational power, or software, please email diwa-vre@lists.oulu.fi with details of your request. 
 
 ## Ask for help with research computing
-We are working hard to develop new features that will help accelerate research within the DIWA DataLab, including a domain-specailized chatbot (the DIWA ReChat) and access to federated data searches through the [AquaINFRA DDAS](https://aquainfra.dev.52north.org/search?searchterm=discharge&dataProvider=syke). In the meantime, get community support with your data access, processing, modelling, or visualization troubles using our moderate [GitHub discussion boards](https://github.com/orgs/DigitalWaters-fi/discussions) 
-
-
-
-
-
+We are working hard to develop new features that will help accelerate research within the DIWA DataLab, including a domain-specailized chatbot (the DIWA ReChat) and access to federated data searches through the [AquaINFRA DDAS](https://aquainfra.dev.52north.org/search?searchterm=discharge&dataProvider=syke). In the meantime, get community support with your data access, processing, modelling, or visualization troubles using our moderate [GitHub discussion boards](https://github.com/orgs/DigitalWaters-fi/discussions)

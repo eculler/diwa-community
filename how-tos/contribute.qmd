@@ -1,0 +1,9 @@
+---
+title: "Contribute"
+---
+
+# Contribute
+
+This section explains how to contribute to the DIWA community documentation and support process.
+
+- [Bug report guidelines for VRE + Data Lake](bug-report-guidelines/Readme.qmd)

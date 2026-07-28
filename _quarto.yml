@@ -4,10 +4,43 @@ project:
 website:
   title: "Digital Waters Community Docs"
   navbar:
+    background: primary
+    search: true
     left:
-      - href: index.qmd
-        text: Home
-      - "how-tos/**.qmd"
+      - text: "Home"
+        href: index.qmd
+      - text: "DIWA VRE"
+        href: how-tos/diwa-vre.qmd
+      - text: "Scientific Workflows"
+        href: how-tos/scientific-workflows.qmd
+      - text: "Contribute"
+        href: how-tos/contribute.qmd
+
+  sidebar:
+    - title: "DIWA VRE"
+      style: "docked"
+      background: light
+      contents:
+        - how-tos/diwa-vre.qmd
+        - how-tos/diwa-datalab/introduction-vre.qmd
+        - how-tos/connect-vre-github/connect-vre-github.qmd
+        - how-tos/connect-vre-github/fork-and-clone.qmd
+        - how-tos/sync-fork/sync-fork.qmd
+        - how-tos/install-packages-guides/README.qmd
+        - how-tos/install-conda-as-kernel/Read.qmd
+
+    - title: "Scientific Workflows"
+      contents:
+        - how-tos/scientific-workflows.qmd
+        - how-tos/introduction-to-bash/bash-tutorial.qmd
+        - how-tos/introduction-to-bash/windows-to-linux-cheatsheet.qmd
+        - how-tos/build-a-docker-image/run-repo2docker-vre.qmd
+
+    - title: "Contribute"
+      contents:
+        - how-tos/contribute.qmd
+        - how-tos/bug-report-guidelines/Readme.qmd
+
 
 execute:
   freeze: auto

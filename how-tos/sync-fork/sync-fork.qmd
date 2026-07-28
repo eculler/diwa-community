@@ -1,4 +1,7 @@
-## Sync your fork on GitHub
+---
+title: "Sync your fork on GitHub"
+---
+
 First, you will need to sync your forked repository with the original repository. This is also called **pulling upstream**, because you are moving changes made in the original (upstream) repository into your repository (pulling).
 
 ![On GitHub.com, navigate to YOUR forked repository.](img/00-open-fork.png)

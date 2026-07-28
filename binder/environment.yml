@@ -8,7 +8,6 @@ dependencies:
 
   # GitHub tooling
   - gh
-  - jupyterlab-git
 
   # In-browser quarto editing
   - jupyter-server-proxy
