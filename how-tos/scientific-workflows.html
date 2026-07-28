@@ -2,16 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.7.34">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>read – Digital Waters Community Docs</title>
+<title>Scientific Workflows – Digital Waters Community Docs</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -23,61 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-143b6c17f0dae29a548db1726933bd3b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-c47ff14d93859274289c56dc78a7c574.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -109,14 +71,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-sidebar docked nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Digital Waters Community Docs</span>
     </a>
   </div>
@@ -127,13 +89,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <span class="nav-link">
-<span class="menu-text">how-tos/**.qmd</span>
-    </span>
+    <a class="nav-link" href="../how-tos/diwa-vre.html"> 
+<span class="menu-text">DIWA VRE</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../how-tos/scientific-workflows.html" aria-current="page"> 
+<span class="menu-text">Scientific Workflows</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../how-tos/contribute.html"> 
+<span class="menu-text">Contribute</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -141,124 +110,87 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../how-tos/scientific-workflows.html">Scientific Workflows</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../how-tos/scientific-workflows.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Scientific Workflows</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../how-tos/introduction-to-bash/bash-tutorial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bash for file management</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../how-tos/introduction-to-bash/windows-to-linux-cheatsheet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Windows → Linux Migration Cheat Sheet</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../how-tos/build-a-docker-image/run-repo2docker-vre.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Use <code>repo2docker</code> to jump-start reproducibility</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Scientific Workflows</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<section id="persistent-conda-environment-in-jupyter-kubernetes-jupyterhub" class="level1">
-<h1>Persistent Conda Environment in Jupyter (Kubernetes / JupyterHub)</h1>
-<p>This guide shows how to create a <strong>persistent Conda environment</strong> that survives <strong>pod or server restarts</strong>.</p>
-<blockquote class="blockquote">
-<p><strong>Before you start:</strong> decide on your own names for the two values marked below — then replace them consistently throughout every command.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Placeholder</th>
-<th>What it is</th>
-<th>Example values</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>&lt;ENV_NAME&gt;</code></td>
-<td>Folder name for your conda environment</td>
-<td><code>datascience</code>, <code>nlp-env</code>, <code>torch39</code></td>
-</tr>
-<tr class="even">
-<td><code>&lt;DISPLAY_NAME&gt;</code></td>
-<td>Label shown in Jupyter’s kernel picker</td>
-<td><code>Python (Data Science)</code>, <code>PyTorch 3.9</code></td>
-</tr>
-</tbody>
-</table>
-<p>Everything else (<code>/home/jovyan</code>, Python version) can also be changed to match your setup.</p>
-</blockquote>
-<hr>
-<section id="create-a-persistent-directory-for-conda-environments" class="level2">
-<h2 class="anchored" data-anchor-id="create-a-persistent-directory-for-conda-environments">1. Create a Persistent Directory for Conda Environments</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /home/jovyan/conda-envs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>conda-envs is folder name can be anything.</p>
-<p>All new environments will live here and <strong>persist across pod restarts</strong>. Run this once.</p>
-<hr>
-</section>
-<section id="create-the-environment" class="level2">
-<h2 class="anchored" data-anchor-id="create-the-environment">2. Create the Environment</h2>
-<p>Replace <code>&lt;ENV_NAME&gt;</code> with your chosen name and set the Python version you need:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-p</span> /home/jovyan/conda-envs/<span class="op">&lt;</span>ENV_NAME<span class="op">&gt;</span> python=3.10 <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The <code>-p</code> flag specifies the <strong>exact installation path</strong>, keeping the environment on the persistent volume.</p>
-<p>You can create multiple environments side by side — just use a different <code>&lt;ENV_NAME&gt;</code> each time:</p>
-<pre><code>/home/jovyan/conda-envs/datascience
-/home/jovyan/conda-envs/nlp-env
-/home/jovyan/conda-envs/torch39</code></pre>
-<hr>
-</section>
-<section id="activate-the-environment" class="level2">
-<h2 class="anchored" data-anchor-id="activate-the-environment">3. Activate the Environment</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> activate /home/jovyan/conda-envs/<span class="op">&lt;</span>ENV_NAME<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<hr>
-</section>
-<section id="install-ipykernel" class="level2">
-<h2 class="anchored" data-anchor-id="install-ipykernel">4. Install <code>ipykernel</code></h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install ipykernel <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This allows the environment to appear as a <strong>Jupyter kernel</strong>.</p>
-<hr>
-</section>
-<section id="register-as-a-jupyter-kernel-persistent" class="level2">
-<h2 class="anchored" data-anchor-id="register-as-a-jupyter-kernel-persistent">5. Register as a Jupyter Kernel (Persistent)</h2>
-<p>Replace both <code>&lt;ENV_NAME&gt;</code> and <code>&lt;DISPLAY_NAME&gt;</code>. The <code>--name</code> value must be a single word (no spaces); <code>--display-name</code> can be anything you like.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> ipykernel install <span class="dt">\</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">--prefix</span><span class="op">=</span>/home/jovyan/.local <span class="dt">\</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">--name</span> <span class="op">&lt;</span>ENV_NAME<span class="op">&gt;</span> <span class="dt">\</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">--display-name</span> <span class="st">"&lt;DISPLAY_NAME&gt;"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The kernel spec is saved at:</p>
-<pre><code>/home/jovyan/.local/share/jupyter/kernels/&lt;ENV_NAME&gt;</code></pre>
-<p>Because <code>/home/jovyan</code> is on a persistent volume, the kernel will <strong>survive server restarts</strong>.</p>
-<hr>
-</section>
-<section id="verify-installation" class="level2">
-<h2 class="anchored" data-anchor-id="verify-installation">6. Verify Installation</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> kernelspec list</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Expected output:</p>
-<pre><code>Available kernels:
-  python3       /opt/conda/share/jupyter/kernels/python3
-  &lt;ENV_NAME&gt;    /home/jovyan/.local/share/jupyter/kernels/&lt;ENV_NAME&gt;</code></pre>
-<hr>
-</section>
-<section id="full-example" class="level2">
-<h2 class="anchored" data-anchor-id="full-example">Full Example</h2>
-<p>Using <code>ENV_NAME=datascience</code> and <code>DISPLAY_NAME=Python (Data Science)</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /home/jovyan/conda-envs</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-p</span> /home/jovyan/conda-envs/datascience python=3.10 <span class="at">-y</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> activate /home/jovyan/conda-envs/datascience</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install ipykernel <span class="at">-y</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> ipykernel install <span class="dt">\</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">--prefix</span><span class="op">=</span>/home/jovyan/.local <span class="dt">\</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">--name</span> datascience <span class="dt">\</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">--display-name</span> <span class="st">"Python (Data Science)"</span></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> kernelspec list</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<hr>
-<p>✅ Your environment is now <strong>persistent and available as a Jupyter kernel</strong>.</p>
+    
+  
+    
+  </div>
+  
 
 
-</section>
+</header>
+
+
+<section id="scientific-workflows" class="level1">
+<h1>Scientific Workflows</h1>
+<p>This section describes workflows and tools for reproducible scientific computing.</p>
+<ul>
+<li><a href="../how-tos/introduction-to-bash/bash-tutorial.html">Bash for file management</a></li>
+<li><a href="../how-tos/introduction-to-bash/windows-to-linux-cheatsheet.html">Windows → Linux migration cheat sheet</a></li>
+<li><a href="../how-tos/install-conda-as-kernel/Read.html">Install Conda as a Jupyter kernel</a></li>
+<li><a href="install-packages-guides/README.qmd">Install packages in JupyterHub</a></li>
+<li><a href="../how-tos/build-a-docker-image/run-repo2docker-vre.html">Use <code>repo2docker</code> to jump-start reproducibility</a></li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -313,14 +245,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -335,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/DigitalWaters-fi\.github\.io\/community\/");
+        var filterRegex = new RegExp("https:\/\/eculler\.github\.io\/diwa-community\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

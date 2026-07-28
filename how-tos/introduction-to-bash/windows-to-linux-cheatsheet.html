@@ -2,16 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.7.34">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>readme – Digital Waters Community Docs</title>
+<title>Windows → Linux Migration Cheat Sheet – Digital Waters Community Docs</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -74,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-143b6c17f0dae29a548db1726933bd3b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-c47ff14d93859274289c56dc78a7c574.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -109,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-sidebar docked nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -131,9 +128,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <span class="nav-link">
-<span class="menu-text">how-tos/**.qmd</span>
-    </span>
+    <a class="nav-link" href="../../how-tos/diwa-vre.html"> 
+<span class="menu-text">DIWA VRE</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../how-tos/scientific-workflows.html" aria-current="page"> 
+<span class="menu-text">Scientific Workflows</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../how-tos/contribute.html"> 
+<span class="menu-text">Contribute</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -141,101 +145,154 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../how-tos/introduction-to-bash/windows-to-linux-cheatsheet.html">Windows → Linux Migration Cheat Sheet</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../how-tos/scientific-workflows.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Scientific Workflows</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../how-tos/introduction-to-bash/bash-tutorial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bash for file management</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../how-tos/introduction-to-bash/windows-to-linux-cheatsheet.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Windows → Linux Migration Cheat Sheet</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../how-tos/build-a-docker-image/run-repo2docker-vre.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Use <code>repo2docker</code> to jump-start reproducibility</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Windows → Linux Migration Cheat Sheet</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<section id="bug-report-guidelines-for-vre-data-lake" class="level1">
-<h1>Bug Report Guidelines for VRE + Data Lake</h1>
-<p>This page explains how to report bugs in the <strong>VRE + Data Lake</strong> platform to help the team track, prioritize, and fix issues efficiently.</p>
-<hr>
-<section id="before-you-report" class="level2">
-<h2 class="anchored" data-anchor-id="before-you-report">Before You Report</h2>
-<ol type="1">
-<li>Ensure you have access to the platform and a GitHub account.</li>
-<li>Search existing issues to avoid duplicates: <a href="https://github.com/DigitalWaters-fi/.github/issues">Open Issues</a>.</li>
-</ol>
-<hr>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="created-with-assistance-from-chatgpt4.1" class="level2">
+<h2 class="anchored" data-anchor-id="created-with-assistance-from-chatgpt4.1">Created with assistance from ChatGPT4.1</h2>
+<p>Search querry “create a cheat sheet in Markdown that covers Windows to Linux repository migration hygeine, cover things like line endings, ghost characters, encodings, permissions, and any other common pitfalls I’ve forgotten”</p>
+<p>When moving code or data from Windows to Linux, follow these steps to avoid common pitfalls:</p>
 </section>
-<section id="how-to-report-a-bug" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-report-a-bug">How to Report a Bug</h2>
-<p>Follow these steps when reporting a bug:</p>
-<section id="identify-the-bug" class="level3">
-<h3 class="anchored" data-anchor-id="identify-the-bug">1. Identify the Bug</h3>
-<ul>
-<li>Describe the unexpected behavior clearly.</li>
-<li>Include screenshots or logs if possible.</li>
-</ul>
-</section>
-<section id="check-for-duplicates" class="level3">
-<h3 class="anchored" data-anchor-id="check-for-duplicates">2. Check for Duplicates</h3>
-<ul>
-<li>Search existing issues on GitHub to see if the bug has already been reported.</li>
-</ul>
-</section>
-<section id="fill-out-the-bug-report-template" class="level3">
-<h3 class="anchored" data-anchor-id="fill-out-the-bug-report-template">3. Fill Out the Bug Report Template</h3>
-<p><strong>Template Example:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">### Bug Title</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>A short, descriptive title</span>
+<section id="convert-line-endings" class="level2">
+<h2 class="anchored" data-anchor-id="convert-line-endings">1️⃣ Convert line endings</h2>
+<p>Windows uses CRLF (<code>\r\n</code>), Linux uses LF (<code>\n</code>).</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert a single file</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">dos2unix</span> filename.txt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>**Description:**</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Describe what happened and why it is a problem.</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>**Steps to Reproduce:**</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Step one</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Step two</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Step three</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>**Expected Result:**</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>What you expected to happen.</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>**Actual Result:**</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>What actually happened.</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>**Environment:**</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Browser:</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>OS:</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>VRE version:</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Data Lake version:</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>**Attachments:**</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>Attach screenshots, logs, or other files if applicable.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert all .sh files in current directory</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> . <span class="at">-type</span> f <span class="at">-name</span> <span class="st">"*.sh"</span> <span class="at">-exec</span> dos2unix {} <span class="dt">\;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="submit-the-bug" class="level3">
-<h3 class="anchored" data-anchor-id="submit-the-bug">4. Submit the Bug</h3>
+<section id="remove-ghost-invisible-characters" class="level2">
+<h2 class="anchored" data-anchor-id="remove-ghost-invisible-characters">2️⃣ Remove ghost / invisible characters</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show non-printable characters</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="at">-v</span> filename.txt</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Show hex codes</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">hexdump</span> <span class="at">-C</span> filename.txt</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove BOM (Byte Order Mark)</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sed</span> <span class="at">-i</span> <span class="st">'1s/^\xEF\xBB\xBF//'</span> filename.txt</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Strip all non-ASCII characters</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">tr</span> <span class="at">-cd</span> <span class="st">'\11\12\15\40-\176'</span> <span class="op">&lt;</span> input.txt <span class="op">&gt;</span> output.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="check-filename-case" class="level2">
+<h2 class="anchored" data-anchor-id="check-filename-case">3️⃣ Check filename case</h2>
+<p>Linux is case-sensitive; Windows is not.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify capitalization matches your code references</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="fix-executable-permissions" class="level2">
+<h2 class="anchored" data-anchor-id="fix-executable-permissions">4️⃣ Fix executable permissions</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make scripts executable</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x script.sh</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Fix ownership if copied from another user</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">chown</span> <span class="at">-R</span> <span class="va">$USER</span>:<span class="va">$USER</span> folder/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="check-file-encoding" class="level2">
+<h2 class="anchored" data-anchor-id="check-file-encoding">5️⃣ Check file encoding</h2>
+<p>Linux prefers UTF-8; Windows may use UTF-16 or legacy codepages.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Detect file encoding</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">file</span> filename.txt</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to UTF-8</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">iconv</span> <span class="at">-f</span> UTF-16 <span class="at">-t</span> UTF-8 input.txt <span class="at">-o</span> output.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="check-for-hiddensystem-files" class="level2">
+<h2 class="anchored" data-anchor-id="check-for-hiddensystem-files">6️⃣ Check for hidden/system files</h2>
+<p>Linux treats files starting with <code>.</code> as hidden. Ensure important config files are copied.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="verify-scripts" class="level2">
+<h2 class="anchored" data-anchor-id="verify-scripts">7️⃣ Verify scripts</h2>
 <ul>
-<li>Go to the <a href="https://github.com/DigitalWaters-fi/.github/issues/new">GitHub New Issue Page</a> and submit your bug report using the template above.</li>
-<li>Make sure to fill out all required fields for faster resolution.</li>
+<li>Use <code>bash -n script.sh</code> to check syntax without running</li>
+<li>Test scripts on Linux before full deployment</li>
 </ul>
-<hr>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> <span class="at">-n</span> script.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-</section>
-<section id="optional-quick-reporting-from-vre" class="level2">
-<h2 class="anchored" data-anchor-id="optional-quick-reporting-from-vre">Optional: Quick Reporting from VRE</h2>
-<p>If available, click <strong>“Report a Bug”</strong> in the VRE interface to open a pre-filled GitHub issue template.</p>
-<hr>
-</section>
-<section id="need-help" class="level2">
-<h2 class="anchored" data-anchor-id="need-help">Need Help?</h2>
-<p>For urgent issues or questions about reporting bugs, contact [Team Contact or Email].</p>
-<hr>
-</section>
-<section id="quick-link-in-readme" class="level2">
-<h2 class="anchored" data-anchor-id="quick-link-in-readme">Quick Link in README</h2>
-<p>Add this to your <code>README.md</code> so users can easily find it:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reporting Bugs</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Please see our <span class="co">[</span><span class="ot">Bug Report Guidelines</span><span class="co">](./BUG_REPORT.md)</span> to submit issues.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<hr>
-<p><em>Thank you for helping improve VRE + Data Lake!</em></p>
+<section id="check-installed-dependencies" class="level2">
+<h2 class="anchored" data-anchor-id="check-installed-dependencies">8️⃣ Check installed dependencies</h2>
+<ul>
+<li>Reinstall Python/Node packages or other dependencies for Linux</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-r</span> requirements.txt</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="quick-tips" class="level3">
+<h3 class="anchored" data-anchor-id="quick-tips">✅ Quick tips</h3>
+<ul>
+<li>Always use <strong>plain text editors</strong>: Vim, Nano, VS Code, or Linux-native editors</li>
+<li>Save files as <strong>UTF-8 without BOM</strong></li>
+<li>Run <strong><code>dos2unix</code> and encoding checks</strong> before executing scripts</li>
+<li>Verify <strong>case-sensitive filenames and permissions</strong></li>
+</ul>
 
 
 </section>
@@ -293,14 +350,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -315,7 +371,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/DigitalWaters-fi\.github\.io\/community\/");
+        var filterRegex = new RegExp("https:\/\/eculler\.github\.io\/diwa-community\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
