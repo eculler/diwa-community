@@ -1,100 +1,12 @@
 [
   {
-    "objectID": "how-tos/diwa-vre.html",
-    "href": "how-tos/diwa-vre.html",
-    "title": "DIWA VRE",
+    "objectID": "how-tos/scientific-workflows.html",
+    "href": "how-tos/scientific-workflows.html",
+    "title": "Scientific Workflows",
     "section": "",
-    "text": "DIWA VRE\nThis section covers key tasks for using the Digital Waters Virtual Research Environment.\n\nGetting started on the DIWA DataLab\nConnect the DIWA VRE to GitHub\nFork a GitHub repository and clone onto the VRE\nSync your fork on GitHub",
+    "text": "Scientific Workflows\nThis section describes workflows and tools for reproducible scientific computing.\n\nBash for file management\nWindows → Linux migration cheat sheet\nInstall Conda as a Jupyter kernel\nInstall packages in JupyterHub\nUse repo2docker to jump-start reproducibility",
     "crumbs": [
-      "DIWA VRE"
-    ]
-  },
-  {
-    "objectID": "how-tos/connect-vre-github/connect-vre-github.html",
-    "href": "how-tos/connect-vre-github/connect-vre-github.html",
-    "title": "Connect the DIWA VRE to GitHub",
-    "section": "",
-    "text": "Goals:",
-    "crumbs": [
-      "DIWA VRE",
-      "Connect the DIWA VRE to GitHub"
-    ]
-  },
-  {
-    "objectID": "how-tos/connect-vre-github/connect-vre-github.html#create-your-github-account",
-    "href": "how-tos/connect-vre-github/connect-vre-github.html#create-your-github-account",
-    "title": "Connect the DIWA VRE to GitHub",
-    "section": "Create your GitHub account",
-    "text": "Create your GitHub account\nStart out at https://github.com/signup:\n &gt; Complete the form. You will be asked to verify your email address – Go check your email for the verification link.\n &gt; When you have created your account, you should see this success alert.",
-    "crumbs": [
-      "DIWA VRE",
-      "Connect the DIWA VRE to GitHub"
-    ]
-  },
-  {
-    "objectID": "how-tos/connect-vre-github/connect-vre-github.html#fill-out-your-github-profile-optional-but-recommended",
-    "href": "how-tos/connect-vre-github/connect-vre-github.html#fill-out-your-github-profile-optional-but-recommended",
-    "title": "Connect the DIWA VRE to GitHub",
-    "section": "Fill out your GitHub profile (optional, but recommended)",
-    "text": "Fill out your GitHub profile (optional, but recommended)\n &gt; Next, head to your settings page on Github\n &gt; Fill out your profile.\n &gt; Make sure to save your profile when you are finished. —",
-    "crumbs": [
-      "DIWA VRE",
-      "Connect the DIWA VRE to GitHub"
-    ]
-  },
-  {
-    "objectID": "how-tos/connect-vre-github/connect-vre-github.html#set-up-a-two-factor-authentication",
-    "href": "how-tos/connect-vre-github/connect-vre-github.html#set-up-a-two-factor-authentication",
-    "title": "Connect the DIWA VRE to GitHub",
-    "section": "Set up a two-factor authentication",
-    "text": "Set up a two-factor authentication\nThis will be required to use the VRE in the future. The easiest way to add two-factor authentication is with a passkey on the computer you use to access the VRE.\n &gt; Next, go to the password and authentication section of your settings.\n &gt; Click on Add a passkey.\n &gt; Your computer will ask you to save your passkey.\n &gt; Next, confirm that your passkey was created.\n &gt; Give the passkey a nickname on GitHub so that you can identify it in the future.",
-    "crumbs": [
-      "DIWA VRE",
-      "Connect the DIWA VRE to GitHub"
-    ]
-  },
-  {
-    "objectID": "how-tos/connect-vre-github/connect-vre-github.html#sign-up-for-the-digitalwaters-fi-github-organization",
-    "href": "how-tos/connect-vre-github/connect-vre-github.html#sign-up-for-the-digitalwaters-fi-github-organization",
-    "title": "Connect the DIWA VRE to GitHub",
-    "section": "Sign up for the DigitalWaters-fi GitHub organization",
-    "text": "Sign up for the DigitalWaters-fi GitHub organization\nOnly organization members have access to the VRE. You can request access using the DigitalWaters-fi organization registration form]\n &gt; Fill out the form and submit. If you are not doing this as part of an event, please also send a message to the administrators of the organization on GitHub.\n &gt; Next, on GitHub, go to your organizations page.\n &gt; You should see and invitation to the organization once your form has been processed.\n &gt; Confirm that you want to join the organization.\n &gt; You should now see a confirmation message.",
-    "crumbs": [
-      "DIWA VRE",
-      "Connect the DIWA VRE to GitHub"
-    ]
-  },
-  {
-    "objectID": "how-tos/connect-vre-github/connect-vre-github.html#launch-a-notebook-on-the-vre",
-    "href": "how-tos/connect-vre-github/connect-vre-github.html#launch-a-notebook-on-the-vre",
-    "title": "Connect the DIWA VRE to GitHub",
-    "section": "Launch a notebook on the VRE",
-    "text": "Launch a notebook on the VRE\nNext, go to the DigitalWaters-fi homepage\n &gt; Navigate to the Getting Started section and click the link to the Virtual Research Lab.\n &gt; Click Sign in with GitHub\n &gt; Confirm that you want to authorize the Virtual Research Lab application.\n &gt; Search for Water, and then select the WaterDigitalization.v1 notebook. It is important to select the version ending with v1 or you will not be able to follow subsequent instructions.\n &gt; [Click Launch\n &gt; You will now see the notebook starting up.",
-    "crumbs": [
-      "DIWA VRE",
-      "Connect the DIWA VRE to GitHub"
-    ]
-  },
-  {
-    "objectID": "how-tos/connect-vre-github/connect-vre-github.html#log-into-github-from-the-vre-to-authorize-your-account",
-    "href": "how-tos/connect-vre-github/connect-vre-github.html#log-into-github-from-the-vre-to-authorize-your-account",
-    "title": "Connect the DIWA VRE to GitHub",
-    "section": "Log into GitHub from the VRE to authorize your account",
-    "text": "Log into GitHub from the VRE to authorize your account\n\nGenerate an SSH key on the VRE\nThis key will be stored in your home folder, which will be available from any notebook on the VRE.\n &gt; Launch a Terminal window\n &gt; Type the command gh auth login and press enter.\n &gt; Select GitHub.com and press enter.\n &gt; Select SSH and press enter.\n &gt; Press enter to confirm you want to generate a new SSH key.\n &gt; Enter your passphrase. If your code is not extremely sensitive, you can skip this step and press enter to save extra steps later on. Your work will still be quite secure without a passphrase.\n &gt; Enter a title for your SSH key so that you can remember which one it is in the event that you need to remove authorization.\n &gt; Select that your want to log in in a web browser.\n &gt; Copy your code and click the link to open GitHub.\n\nFinally, paste your code into the GitHub window that opens.\n\n\n\nAuthorize your account on GitHub\n &gt; Confirm that you want to activate your SSH key.\n &gt; Confirm that you want to authorize your SSH key.\n &gt; Confirm that you want to sign in with your passkey.\n &gt; You should now see a confirmation message.\n\n\nCheck that your authorization was successful\n &gt; In your terminal on the VRE, type the command gh auth status. You should see a green checkmark if you were successful.\n &gt; On the GitHub side, go to your settings page.\n &gt; Select SSH and GPG keys. You should now see your new SSH here on GitHub as well.",
-    "crumbs": [
-      "DIWA VRE",
-      "Connect the DIWA VRE to GitHub"
-    ]
-  },
-  {
-    "objectID": "how-tos/connect-vre-github/connect-vre-github.html#configure-git",
-    "href": "how-tos/connect-vre-github/connect-vre-github.html#configure-git",
-    "title": "Connect the DIWA VRE to GitHub",
-    "section": "Configure git",
-    "text": "Configure git\nFinally, head back to the terminal on the VRE, and enter the following commands, making sure to replace Your Name with your actual name a and your.email@email.com with your actual email. The name and email is required by git. They do not have to match your GitHub account; they are used by your collaborators to see what changes you have made.:\ngit config --global user.name \"Your Name Here\"\ngit config --global user.email \"your.email@email.com\"\nNext, configure your text editor if you wish. The default text editor, vi can be a bit confusing if you are not use to it (but of course you are welcome to use it if you like it!):\ngit config --global core.editor nano\nFinally, set your merge strategy. For scientific programming the merge strategy doesn’t usually matter, but having a default selected will make your life easier when you try to pull in changes your collaborators have made. This code sets the strategy to merge rather than rebase or fast-forward, meaning that if there are multiple users making changes at the same time git will attempt to create its own composite change rather than implement the changes sequentially.\ngit config --global pull.rebase false",
-    "crumbs": [
-      "DIWA VRE",
-      "Connect the DIWA VRE to GitHub"
+      "Scientific Workflows"
     ]
   },
   {
@@ -208,6 +120,28 @@
     ]
   },
   {
+    "objectID": "how-tos/sync-fork/sync-fork.html",
+    "href": "how-tos/sync-fork/sync-fork.html",
+    "title": "Sync your fork on GitHub",
+    "section": "",
+    "text": "First, you will need to sync your forked repository with the original repository. This is also called pulling upstream, because you are moving changes made in the original (upstream) repository into your repository (pulling).",
+    "crumbs": [
+      "DIWA VRE",
+      "Sync your fork on GitHub"
+    ]
+  },
+  {
+    "objectID": "how-tos/sync-fork/sync-fork.html#update-your-local-copy",
+    "href": "how-tos/sync-fork/sync-fork.html#update-your-local-copy",
+    "title": "Sync your fork on GitHub",
+    "section": "Update your local copy",
+    "text": "Update your local copy\nNext, you will need to pull the changes made on GitHub to your local copy. Open up a terminal and navigate to you local repository directory:\ncd WaterDig\nIf you are on the DIWA VRE and opened a fresh server, you will need to decrease the permissions of your SSH private key to connect securely with GitHub\nchmod 600 /home/jovyan/.ssh/id_ed25519\nNext, make sure that all your local changes are committed before you try to pull anything from GitHub:\ngit status\ngit add .\ngit commit -m \"saving anything unsaved since last class\"\nPull the updates from GitHub:\ngit pull\nNote that if you have not configured the default merge strategy you may need to either configure that, e.g.:\ngit config --global pull.rebase false\nOR, you could specify the merge strategy in the command, e.g.:\ngit pull --rebase\nWhen you pull changes, it is possible they will conflict with your local changes. Read the output from the git pull command carefully, and if it says there are merge conflicts make sure to resolve those.\nAfter resolving any merge conflicts, you should be able to push your committed changes along with the upstream updates back to GitHub:\ngit status\ngit add . \ngit commit -m \"merging upstream changes\"\ngit push",
+    "crumbs": [
+      "DIWA VRE",
+      "Sync your fork on GitHub"
+    ]
+  },
+  {
     "objectID": "how-tos/bug-report-guidelines/Readme.html",
     "href": "how-tos/bug-report-guidelines/Readme.html",
     "title": "Bug Report Guidelines for VRE + Data Lake",
@@ -274,25 +208,122 @@
     ]
   },
   {
-    "objectID": "how-tos/sync-fork/sync-fork.html",
-    "href": "how-tos/sync-fork/sync-fork.html",
-    "title": "Sync your fork on GitHub",
+    "objectID": "how-tos/diwa-vre.html",
+    "href": "how-tos/diwa-vre.html",
+    "title": "DIWA VRE",
     "section": "",
-    "text": "First, you will need to sync your forked repository with the original repository. This is also called pulling upstream, because you are moving changes made in the original (upstream) repository into your repository (pulling).",
+    "text": "DIWA VRE\nThis section covers key tasks for using the Digital Waters Virtual Research Environment.\n\nGetting started on the DIWA DataLab\nConnect the DIWA VRE to GitHub\nFork a GitHub repository and clone onto the VRE\nSync your fork on GitHub",
     "crumbs": [
-      "DIWA VRE",
-      "Sync your fork on GitHub"
+      "DIWA VRE"
     ]
   },
   {
-    "objectID": "how-tos/sync-fork/sync-fork.html#update-your-local-copy",
-    "href": "how-tos/sync-fork/sync-fork.html#update-your-local-copy",
-    "title": "Sync your fork on GitHub",
-    "section": "Update your local copy",
-    "text": "Update your local copy\nNext, you will need to pull the changes made on GitHub to your local copy. Open up a terminal and navigate to you local repository directory:\ncd WaterDig\nIf you are on the DIWA VRE and opened a fresh server, you will need to decrease the permissions of your SSH private key to connect securely with GitHub\nchmod 600 /home/jovyan/.ssh/id_ed25519\nNext, make sure that all your local changes are committed before you try to pull anything from GitHub:\ngit status\ngit add .\ngit commit -m \"saving anything unsaved since last class\"\nPull the updates from GitHub:\ngit pull\nNote that if you have not configured the default merge strategy you may need to either configure that, e.g.:\ngit config --global pull.rebase false\nOR, you could specify the merge strategy in the command, e.g.:\ngit pull --rebase\nWhen you pull changes, it is possible they will conflict with your local changes. Read the output from the git pull command carefully, and if it says there are merge conflicts make sure to resolve those.\nAfter resolving any merge conflicts, you should be able to push your committed changes along with the upstream updates back to GitHub:\ngit status\ngit add . \ngit commit -m \"merging upstream changes\"\ngit push",
+    "objectID": "how-tos/connect-vre-github/fork-and-clone.html",
+    "href": "how-tos/connect-vre-github/fork-and-clone.html",
+    "title": "Fork a GitHub repository and clone onto the VRE",
+    "section": "",
+    "text": "Open the user menu in the upper right on GitHub, and navigate to your Organizations page\n\n\n\nSelect the DigitalWaters-fi organization\n\n\n\nNavigate to the Repositories tab\n\n\n\nSelect the WaterDig repository\n\n\n\nClick the Fork button\n\n\n\nConfirm your fork. You do not need to make any changes.\n\n\n\nYou should now be in your fork of the repository! You can check in the upper left that you are in your account and no longer in DigitalWaters-fi\n\n\n\nNavigate to the DIWA VRE and launch a WaterDigitalization image\n\n\n\nCopy the url for your fork. Make sure to select the correct type of authentication (HTTPS or SSH) to match the way you configured your account on the VRE before copying!\n\n\n\nOpen a Terminal window in the VRE and clone your repository with the git clone &lt;url&gt; command, replacing &lt;url&gt; with the url you copied.\n\n\n\nOops! Looks like your SSH key has insufficient permissions, and GitHub won’t accept it as strong authentication! You’ll need to use the chmod command to change the permissions\n\nUse the following command to change the permissions:\nchmod 600 ~/.ssh/id_ed25519\n\n\nNow, you can try cloning again and it should go through (provided your SSH setup was correct). TIP – you can get that command back in the Terminal without needing to type it again by using the up arrow!",
     "crumbs": [
       "DIWA VRE",
-      "Sync your fork on GitHub"
+      "Fork a GitHub repository and clone onto the VRE"
+    ]
+  },
+  {
+    "objectID": "how-tos/contribute.html",
+    "href": "how-tos/contribute.html",
+    "title": "Contribute",
+    "section": "",
+    "text": "Contribute\nThis section explains how to contribute to the DIWA community documentation and support process.\n\nBug report guidelines for VRE + Data Lake",
+    "crumbs": [
+      "Contribute"
+    ]
+  },
+  {
+    "objectID": "how-tos/connect-vre-github/connect-vre-github.html",
+    "href": "how-tos/connect-vre-github/connect-vre-github.html",
+    "title": "Connect the DIWA VRE to GitHub",
+    "section": "",
+    "text": "Goals:",
+    "crumbs": [
+      "DIWA VRE",
+      "Connect the DIWA VRE to GitHub"
+    ]
+  },
+  {
+    "objectID": "how-tos/connect-vre-github/connect-vre-github.html#create-your-github-account",
+    "href": "how-tos/connect-vre-github/connect-vre-github.html#create-your-github-account",
+    "title": "Connect the DIWA VRE to GitHub",
+    "section": "Create your GitHub account",
+    "text": "Create your GitHub account\nStart out at https://github.com/signup:\n &gt; Complete the form. You will be asked to verify your email address – Go check your email for the verification link.\n &gt; When you have created your account, you should see this success alert.",
+    "crumbs": [
+      "DIWA VRE",
+      "Connect the DIWA VRE to GitHub"
+    ]
+  },
+  {
+    "objectID": "how-tos/connect-vre-github/connect-vre-github.html#fill-out-your-github-profile-optional-but-recommended",
+    "href": "how-tos/connect-vre-github/connect-vre-github.html#fill-out-your-github-profile-optional-but-recommended",
+    "title": "Connect the DIWA VRE to GitHub",
+    "section": "Fill out your GitHub profile (optional, but recommended)",
+    "text": "Fill out your GitHub profile (optional, but recommended)\n &gt; Next, head to your settings page on Github\n &gt; Fill out your profile.\n &gt; Make sure to save your profile when you are finished. —",
+    "crumbs": [
+      "DIWA VRE",
+      "Connect the DIWA VRE to GitHub"
+    ]
+  },
+  {
+    "objectID": "how-tos/connect-vre-github/connect-vre-github.html#set-up-a-two-factor-authentication",
+    "href": "how-tos/connect-vre-github/connect-vre-github.html#set-up-a-two-factor-authentication",
+    "title": "Connect the DIWA VRE to GitHub",
+    "section": "Set up a two-factor authentication",
+    "text": "Set up a two-factor authentication\nThis will be required to use the VRE in the future. The easiest way to add two-factor authentication is with a passkey on the computer you use to access the VRE.\n &gt; Next, go to the password and authentication section of your settings.\n &gt; Click on Add a passkey.\n &gt; Your computer will ask you to save your passkey.\n &gt; Next, confirm that your passkey was created.\n &gt; Give the passkey a nickname on GitHub so that you can identify it in the future.",
+    "crumbs": [
+      "DIWA VRE",
+      "Connect the DIWA VRE to GitHub"
+    ]
+  },
+  {
+    "objectID": "how-tos/connect-vre-github/connect-vre-github.html#sign-up-for-the-digitalwaters-fi-github-organization",
+    "href": "how-tos/connect-vre-github/connect-vre-github.html#sign-up-for-the-digitalwaters-fi-github-organization",
+    "title": "Connect the DIWA VRE to GitHub",
+    "section": "Sign up for the DigitalWaters-fi GitHub organization",
+    "text": "Sign up for the DigitalWaters-fi GitHub organization\nOnly organization members have access to the VRE. You can request access using the DigitalWaters-fi organization registration form]\n &gt; Fill out the form and submit. If you are not doing this as part of an event, please also send a message to the administrators of the organization on GitHub.\n &gt; Next, on GitHub, go to your organizations page.\n &gt; You should see and invitation to the organization once your form has been processed.\n &gt; Confirm that you want to join the organization.\n &gt; You should now see a confirmation message.",
+    "crumbs": [
+      "DIWA VRE",
+      "Connect the DIWA VRE to GitHub"
+    ]
+  },
+  {
+    "objectID": "how-tos/connect-vre-github/connect-vre-github.html#launch-a-notebook-on-the-vre",
+    "href": "how-tos/connect-vre-github/connect-vre-github.html#launch-a-notebook-on-the-vre",
+    "title": "Connect the DIWA VRE to GitHub",
+    "section": "Launch a notebook on the VRE",
+    "text": "Launch a notebook on the VRE\nNext, go to the DigitalWaters-fi homepage\n &gt; Navigate to the Getting Started section and click the link to the Virtual Research Lab.\n &gt; Click Sign in with GitHub\n &gt; Confirm that you want to authorize the Virtual Research Lab application.\n &gt; Search for Water, and then select the WaterDigitalization.v1 notebook. It is important to select the version ending with v1 or you will not be able to follow subsequent instructions.\n &gt; [Click Launch\n &gt; You will now see the notebook starting up.",
+    "crumbs": [
+      "DIWA VRE",
+      "Connect the DIWA VRE to GitHub"
+    ]
+  },
+  {
+    "objectID": "how-tos/connect-vre-github/connect-vre-github.html#log-into-github-from-the-vre-to-authorize-your-account",
+    "href": "how-tos/connect-vre-github/connect-vre-github.html#log-into-github-from-the-vre-to-authorize-your-account",
+    "title": "Connect the DIWA VRE to GitHub",
+    "section": "Log into GitHub from the VRE to authorize your account",
+    "text": "Log into GitHub from the VRE to authorize your account\n\nGenerate an SSH key on the VRE\nThis key will be stored in your home folder, which will be available from any notebook on the VRE.\n &gt; Launch a Terminal window\n &gt; Type the command gh auth login and press enter.\n &gt; Select GitHub.com and press enter.\n &gt; Select SSH and press enter.\n &gt; Press enter to confirm you want to generate a new SSH key.\n &gt; Enter your passphrase. If your code is not extremely sensitive, you can skip this step and press enter to save extra steps later on. Your work will still be quite secure without a passphrase.\n &gt; Enter a title for your SSH key so that you can remember which one it is in the event that you need to remove authorization.\n &gt; Select that your want to log in in a web browser.\n &gt; Copy your code and click the link to open GitHub.\n\nFinally, paste your code into the GitHub window that opens.\n\n\n\nAuthorize your account on GitHub\n &gt; Confirm that you want to activate your SSH key.\n &gt; Confirm that you want to authorize your SSH key.\n &gt; Confirm that you want to sign in with your passkey.\n &gt; You should now see a confirmation message.\n\n\nCheck that your authorization was successful\n &gt; In your terminal on the VRE, type the command gh auth status. You should see a green checkmark if you were successful.\n &gt; On the GitHub side, go to your settings page.\n &gt; Select SSH and GPG keys. You should now see your new SSH here on GitHub as well.",
+    "crumbs": [
+      "DIWA VRE",
+      "Connect the DIWA VRE to GitHub"
+    ]
+  },
+  {
+    "objectID": "how-tos/connect-vre-github/connect-vre-github.html#configure-git",
+    "href": "how-tos/connect-vre-github/connect-vre-github.html#configure-git",
+    "title": "Connect the DIWA VRE to GitHub",
+    "section": "Configure git",
+    "text": "Configure git\nFinally, head back to the terminal on the VRE, and enter the following commands, making sure to replace Your Name with your actual name a and your.email@email.com with your actual email. The name and email is required by git. They do not have to match your GitHub account; they are used by your collaborators to see what changes you have made.:\ngit config --global user.name \"Your Name Here\"\ngit config --global user.email \"your.email@email.com\"\nNext, configure your text editor if you wish. The default text editor, vi can be a bit confusing if you are not use to it (but of course you are welcome to use it if you like it!):\ngit config --global core.editor nano\nFinally, set your merge strategy. For scientific programming the merge strategy doesn’t usually matter, but having a default selected will make your life easier when you try to pull in changes your collaborators have made. This code sets the strategy to merge rather than rebase or fast-forward, meaning that if there are multiple users making changes at the same time git will attempt to create its own composite change rather than implement the changes sequentially.\ngit config --global pull.rebase false",
+    "crumbs": [
+      "DIWA VRE",
+      "Connect the DIWA VRE to GitHub"
     ]
   },
   {
@@ -414,16 +445,6 @@
     "crumbs": [
       "DIWA VRE",
       "Getting started on the DIWA DataLab"
-    ]
-  },
-  {
-    "objectID": "how-tos/scientific-workflows.html",
-    "href": "how-tos/scientific-workflows.html",
-    "title": "Scientific Workflows",
-    "section": "",
-    "text": "Scientific Workflows\nThis section describes workflows and tools for reproducible scientific computing.\n\nBash for file management\nWindows → Linux migration cheat sheet\nInstall Conda as a Jupyter kernel\nInstall packages in JupyterHub\nUse repo2docker to jump-start reproducibility",
-    "crumbs": [
-      "Scientific Workflows"
     ]
   },
   {
@@ -600,27 +621,6 @@
     "crumbs": [
       "Scientific Workflows",
       "Bash for file management"
-    ]
-  },
-  {
-    "objectID": "how-tos/contribute.html",
-    "href": "how-tos/contribute.html",
-    "title": "Contribute",
-    "section": "",
-    "text": "Contribute\nThis section explains how to contribute to the DIWA community documentation and support process.\n\nBug report guidelines for VRE + Data Lake",
-    "crumbs": [
-      "Contribute"
-    ]
-  },
-  {
-    "objectID": "how-tos/connect-vre-github/fork-and-clone.html",
-    "href": "how-tos/connect-vre-github/fork-and-clone.html",
-    "title": "Fork a GitHub repository and clone onto the VRE",
-    "section": "",
-    "text": "Open the user menu in the upper right on GitHub, and navigate to your Organizations page\n\n\n\nSelect the DigitalWaters-fi organization\n\n\n\nNavigate to the Repositories tab\n\n\n\nSelect the WaterDig repository\n\n\n\nClick the Fork button\n\n\n\nConfirm your fork. You do not need to make any changes.\n\n\n\nYou should now be in your fork of the repository! You can check in the upper left that you are in your account and no longer in DigitalWaters-fi\n\n\n\nNavigate to the DIWA VRE and launch a WaterDigitalization image\n\n\n\nCopy the url for your fork. Make sure to select the correct type of authentication (HTTPS or SSH) to match the way you configured your account on the VRE before copying!\n\n\n\nOpen a Terminal window in the VRE and clone your repository with the git clone &lt;url&gt; command, replacing &lt;url&gt; with the url you copied.\n\n\n\nOops! Looks like your SSH key has insufficient permissions, and GitHub won’t accept it as strong authentication! You’ll need to use the chmod command to change the permissions\n\nUse the following command to change the permissions:\nchmod 600 ~/.ssh/id_ed25519\n\n\nNow, you can try cloning again and it should go through (provided your SSH setup was correct). TIP – you can get that command back in the Terminal without needing to type it again by using the up arrow!",
-    "crumbs": [
-      "DIWA VRE",
-      "Fork a GitHub repository and clone onto the VRE"
     ]
   }
 ]
