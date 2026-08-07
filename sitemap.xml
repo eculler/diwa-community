@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://eculler.github.io/diwa-community/how-tos/scientific-workflows.html</loc>
-    <lastmod>2026-07-28T12:36:13.851Z</lastmod>
-  </url>
-  <url>
-    <loc>https://eculler.github.io/diwa-community/how-tos/introduction-to-bash/windows-to-linux-cheatsheet.html</loc>
-    <lastmod>2026-07-28T12:36:13.851Z</lastmod>
-  </url>
-  <url>
-    <loc>https://eculler.github.io/diwa-community/how-tos/sync-fork/sync-fork.html</loc>
-    <lastmod>2026-07-28T12:36:13.853Z</lastmod>
-  </url>
-  <url>
-    <loc>https://eculler.github.io/diwa-community/how-tos/bug-report-guidelines/Readme.html</loc>
-    <lastmod>2026-07-28T12:36:13.755Z</lastmod>
-  </url>
-  <url>
     <loc>https://eculler.github.io/diwa-community/how-tos/diwa-vre.html</loc>
-    <lastmod>2026-07-28T12:36:13.847Z</lastmod>
-  </url>
-  <url>
-    <loc>https://eculler.github.io/diwa-community/how-tos/connect-vre-github/fork-and-clone.html</loc>
-    <lastmod>2026-07-28T12:36:13.814Z</lastmod>
-  </url>
-  <url>
-    <loc>https://eculler.github.io/diwa-community/how-tos/contribute.html</loc>
-    <lastmod>2026-07-28T12:36:13.847Z</lastmod>
+    <lastmod>2026-08-07T08:44:28.113Z</lastmod>
   </url>
   <url>
     <loc>https://eculler.github.io/diwa-community/how-tos/connect-vre-github/connect-vre-github.html</loc>
-    <lastmod>2026-07-28T12:36:13.814Z</lastmod>
+    <lastmod>2026-08-07T08:44:28.080Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eculler.github.io/diwa-community/how-tos/introduction-to-bash/windows-to-linux-cheatsheet.html</loc>
+    <lastmod>2026-08-07T08:44:28.116Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eculler.github.io/diwa-community/how-tos/bug-report-guidelines/Readme.html</loc>
+    <lastmod>2026-08-07T08:44:28.021Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eculler.github.io/diwa-community/how-tos/sync-fork/sync-fork.html</loc>
+    <lastmod>2026-08-07T08:44:28.118Z</lastmod>
   </url>
   <url>
     <loc>https://eculler.github.io/diwa-community/how-tos/diwa-datalab/introduction-vre.html</loc>
-    <lastmod>2026-07-28T12:36:13.847Z</lastmod>
+    <lastmod>2026-08-07T08:44:28.113Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eculler.github.io/diwa-community/how-tos/scientific-workflows.html</loc>
+    <lastmod>2026-08-07T08:44:28.116Z</lastmod>
   </url>
   <url>
     <loc>https://eculler.github.io/diwa-community/how-tos/build-a-docker-image/run-repo2docker-vre.html</loc>
-    <lastmod>2026-07-28T12:36:13.814Z</lastmod>
+    <lastmod>2026-08-07T08:44:28.079Z</lastmod>
   </url>
   <url>
     <loc>https://eculler.github.io/diwa-community/how-tos/install-conda-as-kernel/Read.html</loc>
-    <lastmod>2026-07-28T12:36:13.848Z</lastmod>
+    <lastmod>2026-08-07T08:44:28.113Z</lastmod>
   </url>
   <url>
     <loc>https://eculler.github.io/diwa-community/how-tos/introduction-to-bash/bash-tutorial.html</loc>
-    <lastmod>2026-07-28T12:36:13.848Z</lastmod>
+    <lastmod>2026-08-07T08:44:28.113Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eculler.github.io/diwa-community/how-tos/contribute.html</loc>
+    <lastmod>2026-08-07T08:44:28.113Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eculler.github.io/diwa-community/how-tos/connect-vre-github/fork-and-clone.html</loc>
+    <lastmod>2026-08-07T08:44:28.080Z</lastmod>
   </url>
 </urlset>
