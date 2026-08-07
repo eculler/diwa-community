@@ -1,1 +1,37 @@
 /*-- scss:rules --*/
+// scss-docs-start color-variables
+$navyblue:      #11548a !default;
+$azureblue:     #1770b8 !default;
+$oceanblue:     #4ca9ff !default;
+$electricblue:  #83e7fc !default;
+$green:         #addb65 !default;
+$themeblack:    #1a1a1a !default;
+$themegrey:     #e5ecfb !default;
+$classicblue:   #0a5b8a !default;
+$babyblue:      #c4e6fa !default;
+// scss-docs-end color-variables
+
+// scss-docs-start colors-map
+$colors: (
+  "navyblue":      $navyblue,
+  "azureblue":     $azureblue,
+  "oceanblue":     $oceanblue,
+  "electricblue":  $electricblue,
+  "green":         $green,
+  "themeblack":    $themeblack,
+  "themegrey":     $themegrey,
+  "classicblue":   $classicblue,
+  "babyblue":      $babyblue,
+) !default;
+// scss-docs-end colors-map
+
+// scss-docs-start theme-color-variables
+$primary:       $navyblue   !default;
+$secondary:     $gray-600   !default;
+$success:       $oceanblue  !default;
+$info:          $green      !default;
+$warning:       $yellow     !default;
+$danger:        $red        !default;
+$light:         $themegrey  !default;
+$dark:          $themeblack !default;
+// scss-docs-end theme-color-variables
