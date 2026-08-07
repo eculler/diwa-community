@@ -51,4 +51,3 @@ format:
       - pulse
       - custom.scss 
     mainfont: Ubuntu
-    backgroundcolor: #C4E6FA
